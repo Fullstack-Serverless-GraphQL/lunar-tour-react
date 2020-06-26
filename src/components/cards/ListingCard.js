@@ -15,7 +15,7 @@ const ListingCard = ({
       <img src={coverPhoto} class="w-full h-48 rounded-t-px" alt="cover" />
       <div class="flex flex-col p-2">
         <div class="flex flex-row mt-2 ">
-          <p class="font-display text-base">{listingTitle}</p>
+          <p class="font-display text-base text-black">{listingTitle}</p>
           <p class="font-display text-sm text-grey">{listingLocation}</p>
         </div>
 
