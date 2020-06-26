@@ -1,4 +1,7 @@
 import React from "react";
+import { Rate } from "antd";
+
+import "antd/dist/antd.css";
 
 const ListingCard = ({
   listingTitle,
@@ -17,6 +20,7 @@ const ListingCard = ({
         </div>
 
         <p class="font-display text-lg mt-8">${price}</p>
+        <Rate disabled defaultValue={rating} />
       </div>
     </div>
   </>
