@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import loading from "../../assets/loop.svg";
+import remove from "../../assets/remove.svg";
 
 const RemoveButton = ({
   className = "",
@@ -21,7 +21,7 @@ const RemoveButton = ({
       {...props}
     >
       <div className="flex flex-row">
-        <img src="../../assets/remove.svg" />
+        <img src={remove} alt="remove" />
         <p className="text-sm font-display text-bold ml-3 ">Remove</p>
       </div>
     </button>
