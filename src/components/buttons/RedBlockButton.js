@@ -29,7 +29,7 @@ const RedBlockButton = ({
   return (
     <button
       /* eslint-disable no-template-curly-in-string*/
-      className={`${className} cursor-pointer bg-blue-lightest text-blue-darkest focus:outline-none font-display rounded-px px-16 py-2 hover:bg-transparent hover:border hover:border-blue-darkest`}
+      className={`${className} ccursor-pointer bg-red-lightest text-red-darkest focus:outline-none font-display rounded-px px-16 py-2 hover:bg-transparent hover:border hover:border-red-darkest`}
       onClick={onClick}
       disabled={disabled}
       {...props}
