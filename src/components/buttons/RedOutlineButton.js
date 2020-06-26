@@ -16,7 +16,7 @@ const ImageStyles = styled.img`
   animation: ${rotate} 2s infinite linear;
 `;
 
-const DarkPinkButton = ({
+const RedOutlineButton = ({
   className = "",
   onClick,
   text,
@@ -29,7 +29,7 @@ const DarkPinkButton = ({
   return (
     <button
       /* eslint-disable no-template-curly-in-string*/
-      className={`${className} cursor-pointer bg-blue-lightest text-blue-darkest focus:outline-none font-display rounded-px px-16 py-2 hover:bg-transparent hover:border hover:border-blue-darkest`}
+      className={`${className} cursor-pointer bg-white border border-red-light text-red-darkest focus:outline-none font-display rounded-px px-16 py-2 hover:bg-transparent hover:border hover:border-red-darkest`}
       onClick={onClick}
       disabled={disabled}
       {...props}
@@ -51,5 +51,5 @@ const propTypes = {
   long: PropTypes.bool,
   isLoading: PropTypes.bool,
 };
-DarkPinkButton.propTypes = propTypes;
-export default DarkPinkButton;
+RedOutlineButton.propTypes = propTypes;
+export default RedOutlineButton;
