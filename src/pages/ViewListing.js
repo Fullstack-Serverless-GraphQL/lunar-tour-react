@@ -2,7 +2,8 @@ import React from "react";
 import RedBlockButton from "../components/buttons/RedBlockButton";
 import { useQuery } from "@apollo/react-hooks";
 import { GET_A_LISTING } from "../graphql/Queries";
-
+import activy from "../assets/trip_type.svg";
+import amenities from "../assets/trip_activity.svg";
 const ViewListing = (props) => {
   console.log(props);
 
@@ -41,7 +42,7 @@ const ViewListing = (props) => {
           <div className="flex flex-row p-3" key="types">
             {data.getAListing.listingType.map((t) => (
               <>
-                <img src="../assets/trip_type.svg" />
+                <img src={activy} alt="activity" />
                 <p className="font-display ml-2">{t.name}</p>
               </>
             ))}
@@ -53,7 +54,7 @@ const ViewListing = (props) => {
           <div className="flex flex-row p-3" key="activies">
             {data.getAListing.listingActivities.map((a) => (
               <>
-                <img src="../assets/trip_activity.svg" />
+                <img src={amenities} alt="amend" />
                 <p className="font-display ml-2">{a.name}</p>
               </>
             ))}
@@ -71,7 +72,7 @@ const ViewListing = (props) => {
               Your guide
             </h3>
             <img
-              src="data.getAListing.guide.Avatar"
+              src={data.getAListing.guide.Avatar}
               alt="guide"
               className="rounded-lg h-48"
             />
