@@ -1,8 +1,6 @@
 import React from "react";
 
-const LandingHeader = () => {
-  const imgURL =
-    "https://moon.nasa.gov/system/resources/detail_files/187_detail_as11-44-6551_orig.jpg";
+const LandingHeader = ({ imgURL, text }) => {
   return (
     <>
       <div
@@ -15,7 +13,7 @@ const LandingHeader = () => {
         }}
       >
         <h1 class="text-white font-display text-5xl pt-44 s:text-4xl">
-          Book Vacations to Different Lunar Destinations
+          {text}
         </h1>
       </div>
     </>

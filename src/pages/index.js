@@ -14,7 +14,10 @@ const Index = () => {
   console.log(data);
   return (
     <>
-      <LandingHeader />
+      <LandingHeader
+        imgURL="https://moon.nasa.gov/system/resources/detail_files/187_detail_as11-44-6551_orig.jpg"
+        text="Book Vacations to Different Lunar Destinations"
+      />
       <div className="grid grid-cols-3 col-gap-32 p-10">
         {data.getAllListings.map((listing) => (
           <div key={listing.listingId} className="mt-32">
