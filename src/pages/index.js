@@ -14,18 +14,17 @@ const Index = () => {
   return (
     <>
       <LandingHeader />
-      <div class="grid grid-cols-3 col-gap-32 p-10">
+      <div className="grid grid-cols-3 col-gap-32 p-10">
         {data.getAllListings.map((listing) => (
-          <>
+          <div key={listing.id} className="mt-32">
             <ListingCard
               listingTitle={listing.listingName}
               listingLocation={listing.listingLocation}
               price={listing.price}
               rating={listing.rating}
               coverPhoto={listing.coverPhoto}
-              className="mt-32"
             />
-          </>
+          </div>
         ))}
       </div>
     </>
