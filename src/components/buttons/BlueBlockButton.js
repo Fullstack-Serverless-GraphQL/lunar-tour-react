@@ -44,7 +44,11 @@ const DarkPinkButton = ({
       onClick={onClick}
       disabled={disabled}
     >
-      <ImageStyles src={loading} alt="loading..." />
+      {isLoading === true ? (
+        <ImageStyles src={loading} alt="loading..." />
+      ) : (
+        text
+      )}
     </button>
   );
 };
