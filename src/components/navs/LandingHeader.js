@@ -1,6 +1,6 @@
 import React from "react";
 
-const LandingHeader = ({ imgURL, text }) => {
+const LandingHeader = ({ imgURL, text = "" }) => {
   return (
     <>
       <div

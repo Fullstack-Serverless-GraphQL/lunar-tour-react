@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { GET_A_LISTING } from "../graphql/Queries";
 import activy from "../assets/trip_type.svg";
 import amenities from "../assets/trip_activity.svg";
+import LandingHeader from "../components/navs/LandingHeader";
 const ViewListing = (props) => {
   console.log(props);
 
@@ -20,6 +21,7 @@ const ViewListing = (props) => {
 
   return (
     <>
+      <LandingHeader imgURL={data.getAListing.coverPhoto} />
       <div className="grid p-5 mt-10">
         <div className="mr-16">
           <h1 className="font-display  font-semibold text-3xl text-black">
