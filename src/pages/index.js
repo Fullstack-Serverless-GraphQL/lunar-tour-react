@@ -10,19 +10,20 @@ const Index = () => {
   if (loading) return <p className="text-red">loading</p>;
   if (error) return <p className="text-red">{error}</p>;
 
+  console.log(data);
   return (
     <>
       <LandingHeader />
       <div class="grid grid-cols-3 col-gap-32 p-10">
-        {data.getAllListings.map((g) => (
+        {data.getAllListings.map((listing) => (
           <>
             <ListingCard
-              listingTitle="listing.listingName"
-              listingLocation="listing.listingLocation"
-              price="listing.price"
-              rating="listing.rating"
-              coverPhoto="listing.coverPhoto"
-              class="mt-32"
+              listingTitle={listing.listingName}
+              listingLocation={listing.listingLocation}
+              price={listing.price}
+              rating={listing.rating}
+              coverPhoto={listing.coverPhoto}
+              className="mt-32"
             />
           </>
         ))}

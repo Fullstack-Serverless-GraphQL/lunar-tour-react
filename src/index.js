@@ -8,7 +8,7 @@ import { ApolloProvider } from "@apollo/react-hooks";
 
 //add the uri here
 const client = new ApolloClient({
-  uri: "",
+  uri: "http://localhost:4000/graphql",
 });
 ReactDOM.render(
   <React.StrictMode>
