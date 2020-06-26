@@ -1,5 +1,5 @@
 import React from "react";
-import HeadingOne from "../components/HeadingOne";
+import HeadingOne from "../components/typography/HeadingOne";
 import LandingHeader from "../components/navs/LandingHeader";
 import { useQuery } from "@apollo/react-hooks";
 import { GET_ALL_LISTINGS } from "../graphql/Queries";
