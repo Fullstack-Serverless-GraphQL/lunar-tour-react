@@ -1,6 +1,7 @@
 import React from "react";
 
-const ViewListing = () => {
+const ViewListing = (props) => {
+  console.log(props);
   return <></>;
 };
 
