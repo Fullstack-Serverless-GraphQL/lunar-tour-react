@@ -16,7 +16,7 @@ const ImageStyles = styled.img`
   animation: ${rotate} 2s infinite linear;
 `;
 
-const DarkPinkButton = ({
+const RedBlockButton = ({
   className = "",
   onClick,
   text,
@@ -51,5 +51,5 @@ const propTypes = {
   long: PropTypes.bool,
   isLoading: PropTypes.bool,
 };
-DarkPinkButton.propTypes = propTypes;
-export default DarkPinkButton;
+RedBlockButton.propTypes = propTypes;
+export default RedBlockButton;
