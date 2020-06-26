@@ -1,11 +1,10 @@
 import React from "react";
 import HeadingOne from "../components/HeadingOne";
+import LandingHeader from "../components/navs/LandingHeader";
 const Index = () => {
   return (
     <>
-      <HeadingOne className="text-center text-blue-500">
-        This is the home page of the app!
-      </HeadingOne>
+      <LandingHeader />
     </>
   );
 };
