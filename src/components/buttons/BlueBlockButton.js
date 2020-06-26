@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
-import "../../index.css";
-import loading from "../../assets/loading.svg";
+import loading from "../../assets/loop.svg";
 
 const propTypes = {
   className: PropTypes.string,
@@ -43,6 +42,7 @@ const DarkPinkButton = ({
       className={`${className} cursor-pointer bg-blue-lightest text-blue-darkest focus:outline-none font-display rounded-px px-16 py-2 hover:bg-transparent hover:border hover:border-blue-darkest`}
       onClick={onClick}
       disabled={disabled}
+      {...props}
     >
       {isLoading === true ? (
         <ImageStyles src={loading} alt="loading..." />
