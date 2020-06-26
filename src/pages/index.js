@@ -1,9 +1,10 @@
 import React from "react";
-import HeadingOne from "../components/typography/HeadingOne";
 import LandingHeader from "../components/navs/LandingHeader";
 import { useQuery } from "@apollo/react-hooks";
 import { GET_ALL_LISTINGS } from "../graphql/Queries";
 import ListingCard from "../components/cards/ListingCard";
+import { Link } from "@reach/router";
+
 const Index = () => {
   const { loading, data, error } = useQuery(GET_ALL_LISTINGS);
 
@@ -16,14 +17,16 @@ const Index = () => {
       <LandingHeader />
       <div className="grid grid-cols-3 col-gap-32 p-10">
         {data.getAllListings.map((listing) => (
-          <div key={listing.id} className="mt-32">
-            <ListingCard
-              listingTitle={listing.listingName}
-              listingLocation={listing.listingLocation}
-              price={listing.price}
-              rating={listing.rating}
-              coverPhoto={listing.coverPhoto}
-            />
+          <div key={listing.listingId} className="mt-32">
+            <Link to={`listing/${listing.listingId}`}>
+              <ListingCard
+                listingTitle={listing.listingName}
+                listingLocation={listing.listingLocation}
+                price={listing.price}
+                rating={listing.rating}
+                coverPhoto={listing.coverPhoto}
+              />
+            </Link>
           </div>
         ))}
       </div>
