@@ -93,9 +93,9 @@ const Customers = (props) => {
         <RedBlockButton
           text="Proceed"
           className="mr-5 s:mb-5  lg:mb-0"
-          onClick={() => props.setActiveTab(3)}
+          onClick={() => props.setActiveTab("3")}
         />
-        <RedOutlineButton text="Back" onClick={() => props.setActiveTab(1)} />
+        <RedOutlineButton text="Back" onClick={() => props.setActiveTab("1")} />
       </div>
     </>
   );
