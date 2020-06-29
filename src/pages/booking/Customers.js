@@ -33,49 +33,49 @@ const Customers = (props) => {
     return (
       <>
         <Form
-          fields={props.fields}
-          onFieldsChange={(changedFields, allFields) => {
-            props.onChange(allFields);
+          onValuesChange={(changedValues, allValues) => {
+            console.log(changedValues, allValues);
+
+            props.setFields(allValues);
           }}
         >
           <div className="flex lg:flex-row s:flex-col mt-10" key={index}>
             <hr />
             <div className="flex flex-col mr-5">
               <BodyOne> customer name </BodyOne>
-              <Input
-                name={`customers[${index}].name`}
-                placeholder="doku@corrisant.io"
-                type="email"
-              />
+              <Form.Item name={`customers[${index}].name`}>
+                <Input placeholder="Bog Iger" type="name" />
+              </Form.Item>
+
               <BodyOne> customer country </BodyOne>
-              <Input
-                name={`customers[${index}].email`}
-                placeholder="doku@corrisant.io"
-                type="email"
-              />
+
+              <Form.Item name={`customers[${index}].country`}>
+                <Input placeholder="Iran" type="text" />
+              </Form.Item>
+
               <BodyOne> Physio score </BodyOne>
-              <Input
-                placeholder="doku@corrisant.io"
-                type="email"
-                name={`customers[${index}].physioScore`}
-              />
+              <Form.Item name={`customers[${index}].physioScore`}>
+                <Input
+                  placeholder="4"
+                  type="text"
+                  name={`customers[${index}].physioScore`}
+                />
+              </Form.Item>
             </div>
             <div className="flex flex-col">
               <BodyOne> Customer surname </BodyOne>
-              <Input
-                placeholder="doku@corrisant.io"
-                type="email"
-                name={`customers[${index}].surname`}
-              />
+
+              <Form.Item name={`customers[${index}].surname`}>
+                <Input placeholder="iGER" type="text" />
+              </Form.Item>
               <label> </label>
               <input />
               <BodyOne> Passport number </BodyOne>
-              <Input
-                placeholder="doku@corrisant.io"
-                type="email"
-                v-model="customer.passportNumber"
-                name={`customers[${index}].passportNumber`}
-              />
+
+              <Form.Item name={`customers[${index}].passportNumber`}>
+                <Input placeholder="4" type="text" />
+              </Form.Item>
+
               <RemoveButton onClick={() => removeCustomer(index)} />
             </div>
           </div>
@@ -90,9 +90,12 @@ const Customers = (props) => {
         <BlueBlockButton text="Add a customer" onClick={() => addCustomer()} />
       </div>
       <div className="flex lg:flex-row mt-5 s:flex-col">
-        <RedBlockButton text="Proceed" className="mr-5 s:mb-5  lg:mb-0" />
-        <RedBlockButton text="show data" className="mr-5 s:mb-5 lg:mb-0" />
-        <RedOutlineButton text="Back" />
+        <RedBlockButton
+          text="Proceed"
+          className="mr-5 s:mb-5  lg:mb-0"
+          onClick={() => props.setActiveTab(3)}
+        />
+        <RedOutlineButton text="Back" onClick={() => props.setActiveTab(1)} />
       </div>
     </>
   );

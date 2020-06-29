@@ -10,10 +10,11 @@ const CustomerDetails = (props) => {
   return (
     <>
       <Form
-        fields={props.fields}
-        onFieldsChange={(changedFields, allFields) => {
-          console.log(allFields);
-          props.onChange(allFields);
+        // fields={props.fields}
+        onValuesChange={(changedValues, allValues) => {
+          console.log(changedValues, allValues);
+
+          props.setFields(allValues);
         }}
       >
         <div className="flex flex-col p-20 ">
@@ -27,7 +28,9 @@ const CustomerDetails = (props) => {
 
           <div className="mt-5">
             <BodyOne> Email address </BodyOne>
-            <Input placeholder="doku@corrisant.io" name="email" type="email" />
+            <Form.Item name="email">
+              <Input placeholder="doku@corrisant.io" type="email" />
+            </Form.Item>
           </div>
           <div className="flex lg:flex-row mt-5 s:flex-col">
             <RedBlockButton

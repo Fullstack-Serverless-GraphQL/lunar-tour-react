@@ -13,17 +13,14 @@ const BookingIndex = (props) => {
           <CustomerDetails
             setActiveTab={setActiveTab}
             fields={fields}
-            onChange={(newFields) => {
-              setFields(newFields);
-            }}
+            setFields={setFields}
           />
         </Tabs.TabPane>
         <Tabs.TabPane key="2">
           <Customers
             setActiveTab={setActiveTab}
-            onChange={(newFields) => {
-              setFields(newFields);
-            }}
+            setFields={setFields}
+            fields={fields}
           />
         </Tabs.TabPane>
       </Tabs>
