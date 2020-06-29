@@ -7,7 +7,7 @@ const BookingIndex = (props) => {
     <>
       <Tabs defaultActiveKey={activeTab}>
         <Tabs.TabPane key="1">
-          <CustomerDetails />
+          <CustomerDetails setActiveTab={setActiveTab} />
         </Tabs.TabPane>
         <Tabs.TabPane key="2">tab 2</Tabs.TabPane>
       </Tabs>
