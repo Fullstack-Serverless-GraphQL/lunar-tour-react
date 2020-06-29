@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Tabs from "../../components/navs/Tabs";
 import CustomerDetails from "./CustomerDetails";
+import Customers from "./Customers";
 const BookingIndex = (props) => {
   const [activeTab, setActiveTab] = useState("1");
   console.log(activeTab);
@@ -10,7 +11,9 @@ const BookingIndex = (props) => {
         <Tabs.TabPane key="1">
           <CustomerDetails setActiveTab={setActiveTab} />
         </Tabs.TabPane>
-        <Tabs.TabPane key="2">tab 2</Tabs.TabPane>
+        <Tabs.TabPane key="2">
+          <Customers setActiveTab={setActiveTab} />
+        </Tabs.TabPane>
       </Tabs>
     </>
   );
