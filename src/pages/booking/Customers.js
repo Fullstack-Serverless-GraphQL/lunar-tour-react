@@ -9,12 +9,31 @@ import BlueBlockButton from "../../components/buttons/BlueBlockButton";
 
 const Customers = (props) => {
   const [customers, setCustomers] = useState([]);
+
+  const addCustomer = () => {
+    const o = [...customers];
+    o.push({
+      name: null,
+      email: null,
+      physioScore: null,
+      surname: null,
+      passportNumber: null,
+    });
+
+    setCustomers(o);
+  };
+
+  const removeCustomer = (index) => {
+    const o = [...customers];
+    o.splice(index, 1);
+    setCustomers(o);
+  };
   const inputs = customers.map((c) => {
     return (
       <>
-        <div class="flex lg:flex-row s:flex-col mt-10">
+        <div className="flex lg:flex-row s:flex-col mt-10">
           <hr />
-          <div class="flex flex-col mr-5">
+          <div className="flex flex-col mr-5">
             <BodyOne> customer name </BodyOne>
             <Input
               placeholder="doku@corrisant.io"
@@ -34,7 +53,7 @@ const Customers = (props) => {
               v-model="customer.physioScore"
             />
           </div>
-          <div class="flex flex-col">
+          <div className="flex flex-col">
             <BodyOne> Customer surname </BodyOne>
             <Input
               placeholder="doku@corrisant.io"
@@ -52,18 +71,18 @@ const Customers = (props) => {
             <RemoveButton />
           </div>
         </div>
-        <div class="mt-5 ">
-          <BlueBlockButton text="Add a customer" />
-        </div>
       </>
     );
   });
   return (
     <>
       {inputs}
-      <div class="flex lg:flex-row mt-5 s:flex-col">
-        <RedBlockButton text="Proceed" class="mr-5 s:mb-5  lg:mb-0" />
-        <RedBlockButton text="show data" class="mr-5 s:mb-5 lg:mb-0" />
+      <div className="mt-5 ">
+        <BlueBlockButton text="Add a customer" />
+      </div>
+      <div className="flex lg:flex-row mt-5 s:flex-col">
+        <RedBlockButton text="Proceed" className="mr-5 s:mb-5  lg:mb-0" />
+        <RedBlockButton text="show data" className="mr-5 s:mb-5 lg:mb-0" />
         <RedOutlineButton text="Back" />
       </div>
     </>
