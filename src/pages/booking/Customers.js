@@ -6,6 +6,7 @@ import RedBlockButton from "../../components/buttons/RedBlockButton";
 import RedOutlineButton from "../../components/buttons/RedOutlineButton";
 import RemoveButton from "../../components/buttons/RemoveButton";
 import BlueBlockButton from "../../components/buttons/BlueBlockButton";
+import { Form } from "antd";
 
 const Customers = (props) => {
   const [customers, setCustomers] = useState([]);
@@ -31,46 +32,54 @@ const Customers = (props) => {
   const inputs = customers.map((c, index) => {
     return (
       <>
-        <div className="flex lg:flex-row s:flex-col mt-10" key={index}>
-          <hr />
-          <div className="flex flex-col mr-5">
-            <BodyOne> customer name </BodyOne>
-            <Input
-              placeholder="doku@corrisant.io"
-              type="email"
-              v-model="customer.name"
-            />
-            <BodyOne> customer country </BodyOne>
-            <Input
-              placeholder="doku@corrisant.io"
-              type="email"
-              v-model="customer.country"
-            />
-            <BodyOne> Physio score </BodyOne>
-            <Input
-              placeholder="doku@corrisant.io"
-              type="email"
-              v-model="customer.physioScore"
-            />
+        <Form
+          fields={props.fields}
+          onFieldsChange={(changedFields, allFields) => {
+            props.onChange(allFields);
+          }}
+        >
+          <div className="flex lg:flex-row s:flex-col mt-10" key={index}>
+            <hr />
+            <div className="flex flex-col mr-5">
+              <BodyOne> customer name </BodyOne>
+              <Input
+                name={`customers[${index}].name`}
+                placeholder="doku@corrisant.io"
+                type="email"
+              />
+              <BodyOne> customer country </BodyOne>
+              <Input
+                name={`customers[${index}].email`}
+                placeholder="doku@corrisant.io"
+                type="email"
+              />
+              <BodyOne> Physio score </BodyOne>
+              <Input
+                placeholder="doku@corrisant.io"
+                type="email"
+                name={`customers[${index}].physioScore`}
+              />
+            </div>
+            <div className="flex flex-col">
+              <BodyOne> Customer surname </BodyOne>
+              <Input
+                placeholder="doku@corrisant.io"
+                type="email"
+                name={`customers[${index}].surname`}
+              />
+              <label> </label>
+              <input />
+              <BodyOne> Passport number </BodyOne>
+              <Input
+                placeholder="doku@corrisant.io"
+                type="email"
+                v-model="customer.passportNumber"
+                name={`customers[${index}].passportNumber`}
+              />
+              <RemoveButton onClick={() => removeCustomer(index)} />
+            </div>
           </div>
-          <div className="flex flex-col">
-            <BodyOne> Customer surname </BodyOne>
-            <Input
-              placeholder="doku@corrisant.io"
-              type="email"
-              v-model="customer.surname"
-            />
-            <label> </label>
-            <input />
-            <BodyOne> Passport number </BodyOne>
-            <Input
-              placeholder="doku@corrisant.io"
-              type="email"
-              v-model="customer.passportNumber"
-            />
-            <RemoveButton onClick={() => removeCustomer(index)} />
-          </div>
-        </div>
+        </Form>
       </>
     );
   });

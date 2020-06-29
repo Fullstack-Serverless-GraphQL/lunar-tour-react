@@ -12,14 +12,17 @@ const CustomerDetails = (props) => {
       <Form
         fields={props.fields}
         onFieldsChange={(changedFields, allFields) => {
-          props.setFields(allFields);
+          console.log(allFields);
+          props.onChange(allFields);
         }}
       >
         <div className="flex flex-col p-20 ">
           <HeadingOne>Booking for Listing Name</HeadingOne>
           <div className="mt-5">
             <BodyOne>Booking date</BodyOne>
-            <Input name="date" placeholder="date" type="date" />
+            <Form.Item name="date">
+              <Input placeholder="date" type="date" />
+            </Form.Item>
           </div>
 
           <div className="mt-5">

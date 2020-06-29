@@ -5,7 +5,7 @@ import Customers from "./Customers";
 const BookingIndex = (props) => {
   const [activeTab, setActiveTab] = useState("1");
   const [fields, setFields] = useState({});
-  console.log(activeTab);
+  console.log(fields);
   return (
     <>
       <Tabs activeKey={activeTab}>
@@ -13,11 +13,18 @@ const BookingIndex = (props) => {
           <CustomerDetails
             setActiveTab={setActiveTab}
             fields={fields}
-            setFields={setFields}
+            onChange={(newFields) => {
+              setFields(newFields);
+            }}
           />
         </Tabs.TabPane>
         <Tabs.TabPane key="2">
-          <Customers setActiveTab={setActiveTab} fields={fields} />
+          <Customers
+            setActiveTab={setActiveTab}
+            onChange={(newFields) => {
+              setFields(newFields);
+            }}
+          />
         </Tabs.TabPane>
       </Tabs>
     </>
