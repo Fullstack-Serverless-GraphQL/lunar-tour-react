@@ -32,60 +32,69 @@ const Customers = (props) => {
   const inputs = customers.map((c, index) => {
     return (
       <>
-        <Form
-          onValuesChange={(changedValues, allValues) => {
-            console.log(changedValues, allValues);
+        <div className="flex lg:flex-row s:flex-col mt-10" key={index}>
+          <hr />
+          <div className="flex flex-col mr-5">
+            <BodyOne> customer name </BodyOne>
+            <Form.Item name={`${index}.name`}>
+              <Input
+                placeholder="Bog Iger"
+                type="name"
+                value={customers.name}
+              />
+            </Form.Item>
 
-            props.setFields(allValues);
-          }}
-        >
-          <div className="flex lg:flex-row s:flex-col mt-10" key={index}>
-            <hr />
-            <div className="flex flex-col mr-5">
-              <BodyOne> customer name </BodyOne>
-              <Form.Item name={`customers[${index}].name`}>
-                <Input placeholder="Bog Iger" type="name" />
-              </Form.Item>
+            <BodyOne> customer country </BodyOne>
 
-              <BodyOne> customer country </BodyOne>
+            <Form.Item name={`${index}.country`}>
+              <Input placeholder="Iran" type="text" value={customers.country} />
+            </Form.Item>
 
-              <Form.Item name={`customers[${index}].country`}>
-                <Input placeholder="Iran" type="text" />
-              </Form.Item>
-
-              <BodyOne> Physio score </BodyOne>
-              <Form.Item name={`customers[${index}].physioScore`}>
-                <Input
-                  placeholder="4"
-                  type="text"
-                  name={`customers[${index}].physioScore`}
-                />
-              </Form.Item>
-            </div>
-            <div className="flex flex-col">
-              <BodyOne> Customer surname </BodyOne>
-
-              <Form.Item name={`customers[${index}].surname`}>
-                <Input placeholder="iGER" type="text" />
-              </Form.Item>
-              <label> </label>
-              <input />
-              <BodyOne> Passport number </BodyOne>
-
-              <Form.Item name={`customers[${index}].passportNumber`}>
-                <Input placeholder="4" type="text" />
-              </Form.Item>
-
-              <RemoveButton onClick={() => removeCustomer(index)} />
-            </div>
+            <BodyOne> Physio score </BodyOne>
+            <Form.Item name={`${index}.physioScore`}>
+              <Input
+                placeholder="4"
+                type="text"
+                value={customers.physioScore}
+              />
+            </Form.Item>
           </div>
-        </Form>
+          <div className="flex flex-col">
+            <BodyOne> Customer surname </BodyOne>
+
+            <Form.Item name={`${index}.surname`}>
+              <Input placeholder="iGER" type="text" value={customers.surname} />
+            </Form.Item>
+            <label> </label>
+            <input />
+            <BodyOne> Passport number </BodyOne>
+
+            <Form.Item name={`${index}.passportNumber`}>
+              <Input
+                placeholder="4"
+                type="text"
+                value={customers.passportNumber}
+              />
+            </Form.Item>
+
+            <RemoveButton onClick={() => removeCustomer(index)} />
+          </div>
+        </div>
       </>
     );
   });
   return (
     <>
-      {inputs}
+      <Form
+        onValuesChange={(changedValues, allValues) => {
+          console.log(changedValues, allValues);
+
+          props.setFields(allValues);
+        }}
+      >
+        {inputs}
+      </Form>
+
       <div className="mt-5 ">
         <BlueBlockButton text="Add a customer" onClick={() => addCustomer()} />
       </div>
