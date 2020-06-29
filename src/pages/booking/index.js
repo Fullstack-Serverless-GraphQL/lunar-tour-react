@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Tabs from "../../components/navs/Tabs";
+
 const BookingIndex = (props) => {
   const [activeTab, setActiveTab] = useState(1);
   return (
