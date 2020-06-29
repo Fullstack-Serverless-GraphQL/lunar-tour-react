@@ -6,6 +6,7 @@ import RedOutlineButton from "../../components/buttons/RedOutlineButton";
 import Input from "../../components/inputs/Input";
 
 const CustomerDetails = (props) => {
+  console.log(props);
   return (
     <>
       <div className="flex flex-col p-20 ">
@@ -27,7 +28,7 @@ const CustomerDetails = (props) => {
           <RedBlockButton
             text="Proceed"
             className="mr-5 s:mb-5 lg:mb-0"
-            onClick={() => props.setActiveTab(2)}
+            onClick={() => props.setActiveTab("2")}
           />
 
           <RedOutlineButton text="Cancel" />

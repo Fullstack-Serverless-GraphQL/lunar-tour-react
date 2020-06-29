@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Tabs from "../../components/navs/Tabs";
 import CustomerDetails from "./CustomerDetails";
 const BookingIndex = (props) => {
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState("1");
+  console.log(activeTab);
   return (
     <>
-      <Tabs defaultActiveKey={activeTab}>
+      <Tabs activeKey={activeTab}>
         <Tabs.TabPane key="1">
           <CustomerDetails setActiveTab={setActiveTab} />
         </Tabs.TabPane>
