@@ -1,14 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-=
+import React from "react";
+import PropTypes from "prop-types";
 
-const Input = ({
-  className,
-  value,
-  onChange,
-  ...props
-}) => {
-
+const Input = ({ className, value, onChange, ...props }) => {
   return (
     <input
       className={`${className} 
@@ -24,14 +17,13 @@ const Input = ({
       onChange={onChange}
       {...props}
     />
-  )
-
-}
+  );
+};
 
 const propTypes = {
   className: PropTypes.string,
   value: PropTypes.string,
-  onChange: PropTypes.func
-}
-Input.propTypes = propTypes
-export default Input
+  onChange: PropTypes.func,
+};
+Input.propTypes = propTypes;
+export default Input;
