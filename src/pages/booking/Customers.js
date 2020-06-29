@@ -28,10 +28,10 @@ const Customers = (props) => {
     o.splice(index, 1);
     setCustomers(o);
   };
-  const inputs = customers.map((c) => {
+  const inputs = customers.map((c, index) => {
     return (
       <>
-        <div className="flex lg:flex-row s:flex-col mt-10">
+        <div className="flex lg:flex-row s:flex-col mt-10" key={index}>
           <hr />
           <div className="flex flex-col mr-5">
             <BodyOne> customer name </BodyOne>
@@ -68,7 +68,7 @@ const Customers = (props) => {
               type="email"
               v-model="customer.passportNumber"
             />
-            <RemoveButton />
+            <RemoveButton onClick={() => removeCustomer(index)} />
           </div>
         </div>
       </>
@@ -78,7 +78,7 @@ const Customers = (props) => {
     <>
       {inputs}
       <div className="mt-5 ">
-        <BlueBlockButton text="Add a customer" />
+        <BlueBlockButton text="Add a customer" onClick={() => addCustomer()} />
       </div>
       <div className="flex lg:flex-row mt-5 s:flex-col">
         <RedBlockButton text="Proceed" className="mr-5 s:mb-5  lg:mb-0" />
