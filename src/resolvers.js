@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 export const typeDefs = gql`
   extend type Query {
-    getFormData: FormData
+    formData: FormData
   }
 
   extend type Customer {
