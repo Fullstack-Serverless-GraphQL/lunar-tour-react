@@ -64,22 +64,62 @@ const Customers = (props) => {
 
             <BodyOne> customer country </BodyOne>
 
-            <Input placeholder="Iran" type="text" />
+            <Input
+              placeholder="Iran"
+              type="text"
+              onChange={(e) =>
+                updateCustomer({
+                  index,
+                  field: "country",
+                  value: e.currentTarget.value,
+                })
+              }
+            />
 
             <BodyOne> Physio score </BodyOne>
 
-            <Input placeholder="4" type="text" />
+            <Input
+              placeholder="4"
+              type="text"
+              onChange={(e) =>
+                updateCustomer({
+                  index,
+                  field: "physioScore",
+                  value: e.currentTarget.value,
+                })
+              }
+            />
           </div>
           <div className="flex flex-col">
             <BodyOne> Customer surname </BodyOne>
 
-            <Input placeholder="iGER" type="text" />
+            <Input
+              placeholder="iGER"
+              type="text"
+              onChange={(e) =>
+                updateCustomer({
+                  index,
+                  field: "surname",
+                  value: e.currentTarget.value,
+                })
+              }
+            />
 
             <label> </label>
             <input />
             <BodyOne> Passport number </BodyOne>
 
-            <Input placeholder="4" type="text" />
+            <Input
+              placeholder="4"
+              type="text"
+              onChange={(e) =>
+                updateCustomer({
+                  index,
+                  field: "passportNumber",
+                  value: e.currentTarget.value,
+                })
+              }
+            />
 
             <RemoveButton onClick={() => removeCustomer(index)} />
           </div>
