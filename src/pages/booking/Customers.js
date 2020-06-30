@@ -12,15 +12,21 @@ const Customers = (props) => {
   const [customers, setCustomers] = useState([]);
 
   const addCustomer = () => {
-    const o = [...customers];
+    const o = JSON.parse(JSON.stringify(customers));
     o.push({
       name: null,
-      email: null,
       physioScore: null,
       surname: null,
       passportNumber: null,
+      country: null,
     });
 
+    setCustomers(o);
+  };
+
+  const updateCustomer = ({ index, field, value }) => {
+    const o = [...customers];
+    o[index][field] = value;
     setCustomers(o);
   };
 
@@ -29,53 +35,51 @@ const Customers = (props) => {
     o.splice(index, 1);
     setCustomers(o);
   };
+
+  console.log("ccc-1", customers);
   const inputs = customers.map((c, index) => {
+    console.log("ccc", customers[index], c, index);
+
+    const keys = Object.keys(c);
+    console.log("ccc", customers[index], c, index, keys[0]);
+
     return (
       <>
         <div className="flex lg:flex-row s:flex-col mt-10" key={index}>
           <hr />
           <div className="flex flex-col mr-5">
             <BodyOne> customer name </BodyOne>
-            <Form.Item name={`${index}.name`}>
-              <Input
-                placeholder="Bog Iger"
-                type="name"
-                value={customers.name}
-              />
-            </Form.Item>
+
+            <Input
+              placeholder="Bog Iger"
+              type="name"
+              onChange={(e) =>
+                updateCustomer({
+                  index,
+                  field: "name",
+                  value: e.currentTarget.value,
+                })
+              }
+            />
 
             <BodyOne> customer country </BodyOne>
 
-            <Form.Item name={`${index}.country`}>
-              <Input placeholder="Iran" type="text" value={customers.country} />
-            </Form.Item>
+            <Input placeholder="Iran" type="text" />
 
             <BodyOne> Physio score </BodyOne>
-            <Form.Item name={`${index}.physioScore`}>
-              <Input
-                placeholder="4"
-                type="text"
-                value={customers.physioScore}
-              />
-            </Form.Item>
+
+            <Input placeholder="4" type="text" />
           </div>
           <div className="flex flex-col">
             <BodyOne> Customer surname </BodyOne>
 
-            <Form.Item name={`${index}.surname`}>
-              <Input placeholder="iGER" type="text" value={customers.surname} />
-            </Form.Item>
+            <Input placeholder="iGER" type="text" />
+
             <label> </label>
             <input />
             <BodyOne> Passport number </BodyOne>
 
-            <Form.Item name={`${index}.passportNumber`}>
-              <Input
-                placeholder="4"
-                type="text"
-                value={customers.passportNumber}
-              />
-            </Form.Item>
+            <Input placeholder="4" type="text" />
 
             <RemoveButton onClick={() => removeCustomer(index)} />
           </div>
