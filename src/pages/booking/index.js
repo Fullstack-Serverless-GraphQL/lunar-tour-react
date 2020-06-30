@@ -5,7 +5,7 @@ import Customers from "./Customers";
 const BookingIndex = (props) => {
   const [activeTab, setActiveTab] = useState("1");
   const [fields, setFields] = useState({});
-  console.log(fields);
+  console.log("fff", fields);
   return (
     <>
       <Tabs activeKey={activeTab}>

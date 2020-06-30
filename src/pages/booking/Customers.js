@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HeadingOne from "../../components/typography/HeadingOne";
 import BodyOne from "../../components/typography/BodyOne";
 import Input from "../../components/inputs/Input";
@@ -11,6 +11,9 @@ import { Form } from "antd";
 const Customers = (props) => {
   const [customers, setCustomers] = useState([]);
 
+  useEffect(() => {
+    props.setFields({ customers: [...customers] });
+  }, [customers]);
   const addCustomer = () => {
     const o = JSON.parse(JSON.stringify(customers));
     o.push({
@@ -129,15 +132,7 @@ const Customers = (props) => {
   });
   return (
     <>
-      <Form
-        onValuesChange={(changedValues, allValues) => {
-          console.log(changedValues, allValues);
-
-          props.setFields(allValues);
-        }}
-      >
-        {inputs}
-      </Form>
+      {inputs}
 
       <div className="mt-5 ">
         <BlueBlockButton text="Add a customer" onClick={() => addCustomer()} />
