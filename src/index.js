@@ -5,10 +5,23 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
+import { resolvers, typeDefs } from "./resolvers";
+import { InMemoryCache } from "apollo-cache-inmemory";
 
 //add the uri here
+const cache = new InMemoryCache();
+
 const client = new ApolloClient({
+  cache,
   uri: "http://localhost:4000/graphql",
+  resolvers,
+  typeDefs,
+});
+
+cache.writeData({
+  data: {
+    formData: {},
+  },
 });
 ReactDOM.render(
   <React.StrictMode>
