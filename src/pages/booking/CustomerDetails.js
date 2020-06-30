@@ -14,7 +14,10 @@ const CustomerDetails = (props) => {
         onValuesChange={(changedValues, allValues) => {
           console.log(changedValues, allValues);
 
-          props.setFields(allValues);
+          props.setFields({
+            date: allValues.date,
+            email: allValues.email,
+          });
         }}
       >
         <div className="flex flex-col p-20 ">
