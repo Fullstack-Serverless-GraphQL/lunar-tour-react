@@ -41,21 +41,29 @@ export const resolvers = {
     updateFormData: (_, args, context, info) => {
       const queryResult = context.cache.readQuery({ query: GET_FORM_DATA });
 
-      console.log("rrr", _, args, info, context, queryResult);
-      // if (queryResult) {
-      //   const { formData } = queryResult;
-      //   const data = {
-      //     formData: {
-      //       date: date,
-      //       email: email,
-      //       customers: customers,
-      //       ...formData,
-      //     },
-      //   };
-      //   cache.writeQuery({ query: GET_FORM_DATA, data });
-      //   return data.formData;
-      // }
-      // return [];
+      console.log(
+        "rrr",
+        _,
+        args,
+
+        queryResult.formData["__typename"]
+      );
+      const { formData } = queryResult;
+      if (queryResult) {
+        const data = {
+          formData: {
+            date: args.date,
+            __typename: queryResult.formData["__typename"],
+          },
+        };
+        console.log("rrr-3", data);
+
+        context.cache.writeQuery({ query: GET_FORM_DATA, data });
+        console.log("rrr-2", data);
+
+        return data.formData;
+      }
+      return [];
     },
   },
 };

@@ -21,7 +21,7 @@ const CustomerDetails = (props) => {
 
           mutate({
             variables: {
-              email: allValues.email,
+              // email: allValues.email,
               date: allValues.date,
             },
           });
