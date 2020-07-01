@@ -22,6 +22,7 @@ cache.writeData({
     formData: {
       date: "",
       email: "",
+      customer: {},
       __typename: "formData",
     },
   },
