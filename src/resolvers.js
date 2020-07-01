@@ -31,13 +31,13 @@ export const typeDefs = gql`
     updateFormData(
       date: String
       email: String
-      customers: CustomerInput
+      customers: [CustomerInput]
     ): FormData
   }
 `;
 export const resolvers = {
   Mutation: {
-    updateFormData: (_, date, email, customers, { cache }) => {
+    updateFormData: (_, { date }, { email }, { customers }, { cache }) => {
       const queryResult = cache.readQuery({ query: GET_FORM_DATA });
 
       if (queryResult) {
