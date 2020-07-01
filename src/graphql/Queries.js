@@ -49,7 +49,7 @@ export const GET_FORM_DATA = gql`
   query GET_FORM_DATA {
     formData @client {
       date
-      __typename
+      email
     }
   }
 `;

@@ -20,8 +20,9 @@ const client = new ApolloClient({
 cache.writeData({
   data: {
     formData: {
-      __typename: "date",
       date: "",
+      email: "",
+      __typename: "formData",
     },
   },
 });

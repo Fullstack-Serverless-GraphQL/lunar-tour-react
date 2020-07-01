@@ -46,14 +46,15 @@ export const resolvers = {
         _,
         args,
 
-        queryResult.formData["__typename"]
+        queryResult
       );
       const { formData } = queryResult;
       if (queryResult) {
         const data = {
           formData: {
             date: args.date,
-            __typename: queryResult.formData["__typename"],
+            email: args.email,
+            __typename: formData["__typename"],
           },
         };
         console.log("rrr-3", data);
