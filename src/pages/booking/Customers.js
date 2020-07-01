@@ -1,21 +1,26 @@
 import React, { useState, useEffect } from "react";
-import HeadingOne from "../../components/typography/HeadingOne";
+import { UPDATE_FORM_DATA } from "../../graphql/Mutations";
+import { useMutation } from "@apollo/react-hooks";
 import BodyOne from "../../components/typography/BodyOne";
 import Input from "../../components/inputs/Input";
 import RedBlockButton from "../../components/buttons/RedBlockButton";
 import RedOutlineButton from "../../components/buttons/RedOutlineButton";
 import RemoveButton from "../../components/buttons/RemoveButton";
 import BlueBlockButton from "../../components/buttons/BlueBlockButton";
-import { Form } from "antd";
 
 const Customers = (props) => {
   const [customers, setCustomers] = useState([]);
+  const [mutate, { data, loading, error }] = useMutation(UPDATE_FORM_DATA);
 
   useEffect(() => {
-    props.setFields({ customers: [...customers] });
-  }, [customers]);
+    mutate({
+      variables: {
+        customer: customers,
+      },
+    });
+  }, [customers, mutate]);
   const addCustomer = () => {
-    const o = JSON.parse(JSON.stringify(customers));
+    const o = [...customers];
     o.push({
       name: null,
       physioScore: null,
