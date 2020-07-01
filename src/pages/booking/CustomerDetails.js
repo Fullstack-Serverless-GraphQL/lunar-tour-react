@@ -1,4 +1,6 @@
 import React from "react";
+import { useMutation } from "@apollo/react-hooks";
+import { UPDATE_FORM_DATA } from "../../graphql/Mutations";
 import HeadingOne from "../../components/typography/HeadingOne";
 import BodyOne from "../../components/typography/BodyOne";
 import RedBlockButton from "../../components/buttons/RedBlockButton";
@@ -7,6 +9,9 @@ import Input from "../../components/inputs/Input";
 import { Form } from "antd";
 const CustomerDetails = (props) => {
   console.log(props);
+
+  const [mutate, { data, loading, error }] = useMutation(UPDATE_FORM_DATA);
+
   return (
     <>
       <Form
@@ -14,9 +19,11 @@ const CustomerDetails = (props) => {
         onValuesChange={(changedValues, allValues) => {
           console.log(changedValues, allValues);
 
-          props.setFields({
-            date: allValues.date,
-            email: allValues.email,
+          mutate({
+            variables: {
+              email: allValues.email,
+              date: allValues.email,
+            },
           });
         }}
       >
