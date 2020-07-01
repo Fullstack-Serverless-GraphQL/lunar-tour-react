@@ -1,5 +1,6 @@
 import gql from "graphql-tag";
 import { GET_FORM_DATA } from "./graphql/Queries";
+
 export const typeDefs = gql`
   extend type Query {
     formData: FormData
@@ -23,8 +24,8 @@ export const typeDefs = gql`
 
   extend type FormData {
     date: String
-    email: String
-    customers: CustomerInput
+    # email: String
+    # customers: CustomerInput
   }
 
   extend type Mutation {
@@ -37,23 +38,24 @@ export const typeDefs = gql`
 `;
 export const resolvers = {
   Mutation: {
-    updateFormData: (_, { date }, { email }, { customers }, { cache }) => {
-      const queryResult = cache.readQuery({ query: GET_FORM_DATA });
+    updateFormData: (_, args, context, info) => {
+      const queryResult = context.cache.readQuery({ query: GET_FORM_DATA });
 
-      if (queryResult) {
-        const { formData } = queryResult;
-        const data = {
-          formData: {
-            date: date,
-            email: email,
-            customers: customers,
-            ...formData,
-          },
-        };
-        cache.writeQuery({ query: GET_FORM_DATA, data });
-        return data.formData;
-      }
-      return [];
+      console.log("rrr", _, args, info, context, queryResult);
+      // if (queryResult) {
+      //   const { formData } = queryResult;
+      //   const data = {
+      //     formData: {
+      //       date: date,
+      //       email: email,
+      //       customers: customers,
+      //       ...formData,
+      //     },
+      //   };
+      //   cache.writeQuery({ query: GET_FORM_DATA, data });
+      //   return data.formData;
+      // }
+      // return [];
     },
   },
 };

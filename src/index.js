@@ -15,12 +15,14 @@ const client = new ApolloClient({
   cache,
   uri: "http://localhost:4000/graphql",
   resolvers,
-  typeDefs,
 });
 
 cache.writeData({
   data: {
-    formData: {},
+    formData: {
+      __typename: "date",
+      date: "",
+    },
   },
 });
 ReactDOM.render(

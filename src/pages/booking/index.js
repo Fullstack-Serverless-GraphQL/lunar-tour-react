@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import Tabs from "../../components/navs/Tabs";
+import { useQuery } from "@apollo/react-hooks";
+import { GET_FORM_DATA } from "../../graphql/Queries";
 import CustomerDetails from "./CustomerDetails";
 import Customers from "./Customers";
 const BookingIndex = (props) => {
   const [activeTab, setActiveTab] = useState("1");
   const [fields, setFields] = useState({});
-  console.log("fff", fields);
+  // const { data, loading, error } = useQuery(GET_FORM_DATA);
+  // console.log("fff", data);
 
   return (
     <>

@@ -17,12 +17,12 @@ const CustomerDetails = (props) => {
       <Form
         // fields={props.fields}
         onValuesChange={(changedValues, allValues) => {
-          console.log(changedValues, allValues);
+          console.log("rrr", allValues.date);
 
           mutate({
             variables: {
               email: allValues.email,
-              date: allValues.email,
+              date: allValues.date,
             },
           });
         }}

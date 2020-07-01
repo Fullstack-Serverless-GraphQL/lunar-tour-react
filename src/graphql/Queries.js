@@ -47,6 +47,9 @@ export const GET_A_LISTING = gql`
 
 export const GET_FORM_DATA = gql`
   query GET_FORM_DATA {
-    formData @client
+    formData @client {
+      date
+      __typename
+    }
   }
 `;
