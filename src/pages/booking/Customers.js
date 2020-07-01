@@ -12,13 +12,13 @@ const Customers = (props) => {
   const [customers, setCustomers] = useState([]);
   const [mutate, { data, loading, error }] = useMutation(UPDATE_FORM_DATA);
 
-  useEffect(() => {
-    mutate({
-      variables: {
-        customer: customers,
-      },
-    });
-  }, [customers, mutate]);
+  // useEffect(() => {
+  //   mutate({
+  //     variables: {
+  //       customer: customers,
+  //     },
+  //   });
+  // }, [customers, mutate]);
   const addCustomer = () => {
     const o = [...customers];
     o.push({
@@ -35,6 +35,11 @@ const Customers = (props) => {
   const updateCustomer = ({ index, field, value }) => {
     const o = [...customers];
     o[index][field] = value;
+    mutate({
+      variables: {
+        customer: o,
+      },
+    });
     setCustomers(o);
   };
 
