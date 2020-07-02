@@ -29,6 +29,7 @@ const Customers = (props) => {
       country: null,
     });
 
+    console.log("addCustomer", o);
     setCustomers(o);
   };
 
@@ -40,6 +41,8 @@ const Customers = (props) => {
         customer: o,
       },
     });
+    console.log("updateCustomer", o);
+
     setCustomers(o);
   };
 
@@ -49,12 +52,8 @@ const Customers = (props) => {
     setCustomers(o);
   };
 
-  console.log("ccc-1", customers);
   const inputs = customers.map((c, index) => {
-    console.log("ccc", customers[index], c, index);
-
     const keys = Object.keys(c);
-    console.log("ccc", customers[index], c, index, keys[0]);
 
     return (
       <>

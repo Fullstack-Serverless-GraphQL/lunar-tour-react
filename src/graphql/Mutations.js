@@ -4,8 +4,8 @@ export const UPDATE_FORM_DATA = gql`
   mutation UPDATE_FORM_DATA(
     $date: String
     $email: String
-    $custotmer: [CustomerInput]
+    $customer: CustomerInput
   ) {
-    updateFormData(date: $date, email: $email, custotmer: $custotmer) @client
+    updateFormData(date: $date, email: $email, customer: $customer) @client
   }
 `;
