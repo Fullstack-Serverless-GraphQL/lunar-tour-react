@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { UPDATE_FORM_DATA } from "../../graphql/Mutations";
 import { useMutation } from "@apollo/react-hooks";
 import BodyOne from "../../components/typography/BodyOne";
