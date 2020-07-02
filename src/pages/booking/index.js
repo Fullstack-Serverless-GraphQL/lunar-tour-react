@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { GET_FORM_DATA } from "../../graphql/Queries";
 import CustomerDetails from "./CustomerDetails";
 import Customers from "./Customers";
+import Checkout from "./Checkout";
 const BookingIndex = (props) => {
   const [activeTab, setActiveTab] = useState("1");
   const [fields, setFields] = useState({});
@@ -26,6 +27,9 @@ const BookingIndex = (props) => {
             setFields={setFields}
             fields={fields}
           />
+        </Tabs.TabPane>
+        <Tabs.TabPane key="3">
+          <Checkout setActiveTab={setActiveTab} />
         </Tabs.TabPane>
       </Tabs>
     </>

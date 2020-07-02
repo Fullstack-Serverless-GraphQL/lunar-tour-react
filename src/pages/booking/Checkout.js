@@ -7,7 +7,7 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 
-const Checkout = () => {
+const Checkout = (props) => {
   return <></>;
 };
 
