@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { UPDATE_FORM_DATA } from "../../graphql/Mutations";
 import { GET_FORM_DATA } from "../../graphql/Queries";
 import { useMutation, useQuery } from "@apollo/react-hooks";
-import { ApolloCache } from "apollo-cache";
 import BodyOne from "../../components/typography/BodyOne";
 import Input from "../../components/inputs/Input";
 import RedBlockButton from "../../components/buttons/RedBlockButton";
@@ -12,18 +11,9 @@ import BlueBlockButton from "../../components/buttons/BlueBlockButton";
 
 const Customers = (props) => {
   const [customers, setCustomers] = useState([]);
-  const { loading, data, error } = useQuery(GET_FORM_DATA);
-  const [mutate, { data: mutationData }] = useMutation(UPDATE_FORM_DATA);
+  const { data } = useQuery(GET_FORM_DATA);
+  const [mutate] = useMutation(UPDATE_FORM_DATA);
 
-  const cache = new ApolloCache();
-  console.log("qqq", data, cache);
-  // useEffect(() => {
-  //   mutate({
-  //     variables: {
-  //       customer: customers,
-  //     },
-  //   });
-  // }, [customers, mutate]);
   const addCustomer = () => {
     const o = [...customers];
     o.push({
