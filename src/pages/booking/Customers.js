@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { UPDATE_FORM_DATA } from "../../graphql/Mutations";
-import { useMutation } from "@apollo/react-hooks";
+import { GET_FORM_DATA } from "../../graphql/Queries";
+import { useMutation, useQuery } from "@apollo/react-hooks";
+import { ApolloCache } from "apollo-cache";
 import BodyOne from "../../components/typography/BodyOne";
 import Input from "../../components/inputs/Input";
 import RedBlockButton from "../../components/buttons/RedBlockButton";
@@ -10,8 +12,11 @@ import BlueBlockButton from "../../components/buttons/BlueBlockButton";
 
 const Customers = (props) => {
   const [customers, setCustomers] = useState([]);
-  const [mutate, { data, loading, error }] = useMutation(UPDATE_FORM_DATA);
+  const { loading, data, error } = useQuery(GET_FORM_DATA);
+  const [mutate, { data: mutationData }] = useMutation(UPDATE_FORM_DATA);
 
+  const cache = new ApolloCache();
+  console.log("qqq", data, cache);
   // useEffect(() => {
   //   mutate({
   //     variables: {
@@ -29,7 +34,6 @@ const Customers = (props) => {
       country: null,
     });
 
-    console.log("addCustomer", o);
     setCustomers(o);
   };
 
@@ -38,10 +42,11 @@ const Customers = (props) => {
     o[index][field] = value;
     mutate({
       variables: {
+        email: data.formData.email,
+        date: data.formData.date,
         customer: o,
       },
     });
-    console.log("updateCustomer", o);
 
     setCustomers(o);
   };
@@ -53,8 +58,6 @@ const Customers = (props) => {
   };
 
   const inputs = customers.map((c, index) => {
-    const keys = Object.keys(c);
-
     return (
       <>
         <div className="flex lg:flex-row s:flex-col mt-10" key={index}>

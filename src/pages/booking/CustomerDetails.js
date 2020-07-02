@@ -1,6 +1,5 @@
 import React from "react";
 import { useMutation } from "@apollo/react-hooks";
-import { GET_FORM_DATA } from "../../graphql/Queries";
 import { UPDATE_FORM_DATA } from "../../graphql/Mutations";
 import HeadingOne from "../../components/typography/HeadingOne";
 import BodyOne from "../../components/typography/BodyOne";
@@ -24,11 +23,6 @@ const CustomerDetails = (props) => {
             variables: {
               email: allValues.email,
               date: allValues.date,
-            },
-            update: (store, { data: { updateFormData } }) => {
-              const data = store.readQuery({ query: GET_FORM_DATA });
-              data.formData.customer = updateFormData.customer;
-              store.writeQuery({ query: GET_FORM_DATA, data });
             },
           });
         }}
