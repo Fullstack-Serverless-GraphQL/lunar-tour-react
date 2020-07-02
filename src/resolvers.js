@@ -9,13 +9,7 @@ export const resolvers = {
       const { formData } = queryResult;
       if (queryResult) {
         const data = {
-          formData: {
-            date: args.date,
-            email: args.email,
-            customer: args.customer,
-            __typename: formData["__typename"],
-            ...formData,
-          },
+          formData: formData.hasOwnProperty(""),
         };
 
         context.cache.writeQuery({ query: GET_FORM_DATA, data });
