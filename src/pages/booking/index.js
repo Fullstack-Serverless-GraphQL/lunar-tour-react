@@ -5,6 +5,7 @@ import { GET_FORM_DATA } from "../../graphql/Queries";
 import CustomerDetails from "./CustomerDetails";
 import Customers from "./Customers";
 import Checkout from "./Checkout";
+import ConfirmationTab from "./ConfirmationTab";
 const BookingIndex = (props) => {
   const [activeTab, setActiveTab] = useState("1");
   const [fields, setFields] = useState({});
@@ -30,6 +31,9 @@ const BookingIndex = (props) => {
         </Tabs.TabPane>
         <Tabs.TabPane key="3">
           <Checkout setActiveTab={setActiveTab} />
+        </Tabs.TabPane>
+        <Tabs.TabPane key="4">
+          <ConfirmationTab setActiveTab={setActiveTab} />
         </Tabs.TabPane>
       </Tabs>
     </>
