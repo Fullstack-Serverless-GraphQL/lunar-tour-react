@@ -10,7 +10,7 @@ import { Form } from "antd";
 const CustomerDetails = (props) => {
   console.log(props);
 
-  const [mutate, { data, loading, error }] = useMutation(UPDATE_FORM_DATA);
+  const [mutate] = useMutation(UPDATE_FORM_DATA);
 
   return (
     <>

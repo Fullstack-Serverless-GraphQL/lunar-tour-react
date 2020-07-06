@@ -1,4 +1,3 @@
-import _ from "lodash";
 import { GET_FORM_DATA } from "./graphql/Queries";
 
 export const resolvers = {
