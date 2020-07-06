@@ -41,24 +41,24 @@ const ViewListing = (props) => {
             Trip ammenities
           </h3>
 
-          <div className="flex flex-row p-3" key="types">
+          <div className="flex flex-col p-3" key="types">
             {data.getAListing.listingType.map((t) => (
-              <>
+              <div key={t} className="flex flex-row">
                 <img src={activy} alt="activity" />
                 <p className="font-display ml-2">{t.name}</p>
-              </>
+              </div>
             ))}
           </div>
 
           <h3 className="font-display text-2xl font-bold text-black  mt-10">
             Activites
           </h3>
-          <div className="flex flex-row p-3" key="activies">
+          <div className="flex flex-col p-3" key="activies">
             {data.getAListing.listingActivities.map((a) => (
-              <>
+              <div key={a} className="flex flex-row">
                 <img src={amenities} alt="amend" />
                 <p className="font-display ml-2">{a.name}</p>
-              </>
+              </div>
             ))}
           </div>
         </div>
