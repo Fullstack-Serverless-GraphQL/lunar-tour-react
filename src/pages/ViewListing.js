@@ -71,6 +71,7 @@ const ViewListing = (props) => {
         <div className="flex flex-col ">
           <div>
             <RedBlockButton
+              onClick={() => props.navigate(`/booking/${props.id}`)}
               text="Book"
               className=" text-center s:pr-20 mb-10 mt-10"
             />
