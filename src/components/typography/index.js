@@ -1,6 +1,4 @@
-import BodyOne from "./BodyOne";
-import HeadingOne from "./HeadingOne";
-import HeadingTwo from "./HeadingTwo";
-import HeadingThree from "./HeadingThree";
-
-export default { BodyOne, HeadingOne, HeadingTwo, HeadingThree };
+export * from "./BodyOne";
+export * from "./HeadingOne";
+export * from "./HeadingTwo";
+export * from "./HeadingThree";

@@ -5,6 +5,7 @@ import { GET_A_LISTING } from "../graphql/Queries";
 import activy from "../assets/trip_type.svg";
 import amenities from "../assets/trip_activity.svg";
 import LandingHeader from "../components/navs/LandingHeader";
+import { HeadingOne } from "../components/typography";
 const ViewListing = (props) => {
   console.log(props);
 
@@ -24,9 +25,9 @@ const ViewListing = (props) => {
       <LandingHeader imgURL={data.getAListing.coverPhoto} />
       <div className="grid grid-cols-13 p-5 mt-10">
         <div className="mr-16">
-          <h1 className="font-display  font-semibold text-3xl text-black">
+          <HeadingOne className="font-display  font-semibold text-3xl text-black">
             {data.getAListing.listingName}
-          </h1>
+          </HeadingOne>
           <h1 className="font-display text-xl text-black mt-4 mb-8">
             {data.getAListing.listingLocation}
           </h1>
