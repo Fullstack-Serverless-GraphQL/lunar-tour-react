@@ -45,7 +45,7 @@ const ViewListing = (props) => {
             {data.getAListing.listingType.map((t) => (
               <div key={t} className="flex flex-row">
                 <img src={activy} alt="activity" />
-                <p className="font-display ml-2">{t.name}</p>
+                <p className="font-display ml-2 mt-2">{t.name}</p>
               </div>
             ))}
           </div>
@@ -57,7 +57,7 @@ const ViewListing = (props) => {
             {data.getAListing.listingActivities.map((a) => (
               <div key={a} className="flex flex-row">
                 <img src={amenities} alt="amend" />
-                <p className="font-display ml-2">{a.name}</p>
+                <p className="font-display ml-2 mt-2">{a.name}</p>
               </div>
             ))}
           </div>
