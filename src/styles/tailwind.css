@@ -7045,7 +7045,7 @@ video {
 }
 
 .grid-cols-13 {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .grid-cols-none {
@@ -15519,7 +15519,7 @@ video {
   }
 
   .s\:grid-cols-13 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 
   .s\:grid-cols-none {
@@ -23992,7 +23992,7 @@ video {
   }
 
   .s-max\:grid-cols-13 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 
   .s-max\:grid-cols-none {
@@ -32465,7 +32465,7 @@ video {
   }
 
   .sl\:grid-cols-13 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 
   .sl\:grid-cols-none {
@@ -40938,7 +40938,7 @@ video {
   }
 
   .sm\:grid-cols-13 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 
   .sm\:grid-cols-none {
@@ -49411,7 +49411,7 @@ video {
   }
 
   .sm-600\:grid-cols-13 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 
   .sm-600\:grid-cols-none {
@@ -57884,7 +57884,7 @@ video {
   }
 
   .sm-land\:grid-cols-13 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 
   .sm-land\:grid-cols-none {
@@ -66357,7 +66357,7 @@ video {
   }
 
   .md\:grid-cols-13 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 
   .md\:grid-cols-none {
@@ -74830,7 +74830,7 @@ video {
   }
 
   .lg\:grid-cols-13 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 
   .lg\:grid-cols-none {
@@ -83303,7 +83303,7 @@ video {
   }
 
   .x\:grid-cols-13 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 
   .x\:grid-cols-none {
@@ -91776,7 +91776,7 @@ video {
   }
 
   .lapie\:grid-cols-13 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 
   .lapie\:grid-cols-none {
@@ -100249,7 +100249,7 @@ video {
   }
 
   .xl\:grid-cols-13 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 
   .xl\:grid-cols-none {

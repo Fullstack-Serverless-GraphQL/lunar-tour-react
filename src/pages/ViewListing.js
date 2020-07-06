@@ -22,7 +22,7 @@ const ViewListing = (props) => {
   return (
     <>
       <LandingHeader imgURL={data.getAListing.coverPhoto} />
-      <div className="grid-cols-13 p-5 mt-10">
+      <div className="grid grid-cols-13 p-5 mt-10">
         <div className="mr-16">
           <h1 className="font-display  font-semibold text-3xl text-black">
             {data.getAListing.listingName}
