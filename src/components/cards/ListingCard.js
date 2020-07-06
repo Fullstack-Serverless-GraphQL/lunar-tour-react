@@ -1,6 +1,6 @@
 import React from "react";
 import { Rate } from "antd";
-
+import BodyOne from "../typography/BodyOne";
 import "antd/dist/antd.css";
 
 const ListingCard = ({
@@ -15,11 +15,15 @@ const ListingCard = ({
       <img src={coverPhoto} class="w-full h-48 rounded-t-px" alt="cover" />
       <div class="flex flex-col p-2">
         <div class="flex flex-row mt-2 ">
-          <p class="font-display text-base text-black">{listingTitle}</p>
-          <p class="font-display text-sm text-grey">{listingLocation}</p>
+          <BodyOne>{listingTitle}</BodyOne>
+          <BodyOne class="font-display text-sm text-grey">
+            {listingLocation}
+          </BodyOne>
         </div>
 
-        <p class="font-display text-lg mt-8 text-green-dark">${price}</p>
+        <BodyOne class="font-display text-lg mt-8 text-green-dark">
+          ${price}
+        </BodyOne>
         <Rate disabled defaultValue={rating} />
       </div>
     </div>
