@@ -11,7 +11,7 @@ const ListingCard = ({
   coverPhoto,
 }) => (
   <>
-    <div class="rounded-px w-card h-card shadow-lg-card cursor-pointer">
+    <div class="rounded-px w-card h-auto shadow-lg-card cursor-pointer">
       <img src={coverPhoto} class="w-full h-48 rounded-t-px" alt="cover" />
       <div class="flex flex-col p-2">
         <div class="flex flex-row mt-2 ">
