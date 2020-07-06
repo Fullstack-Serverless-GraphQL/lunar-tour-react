@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 const BodyOne = ({ className, children }) => {
   return (
-    <p className={`${className} text-4xl text-black text-bold font-display`}>
+    <p className={`${className} text-sm text-black text-bold font-display`}>
       {children}
     </p>
   );
