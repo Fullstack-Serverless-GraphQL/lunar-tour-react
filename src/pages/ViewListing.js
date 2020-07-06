@@ -5,7 +5,12 @@ import { GET_A_LISTING } from "../graphql/Queries";
 import activy from "../assets/trip_type.svg";
 import amenities from "../assets/trip_activity.svg";
 import LandingHeader from "../components/navs/LandingHeader";
-import { HeadingOne } from "../components/typography";
+import {
+  HeadingOne,
+  HeadingTwo,
+  HeadingThree,
+  BodyOne,
+} from "../components/typography";
 const ViewListing = (props) => {
   console.log(props);
 
@@ -28,37 +33,37 @@ const ViewListing = (props) => {
           <HeadingOne className="font-display  font-semibold text-3xl text-black">
             {data.getAListing.listingName}
           </HeadingOne>
-          <h1 className="font-display text-xl text-black mt-4 mb-8">
+          <HeadingTwo className="font-display text-xl text-black mt-4 mb-8">
             {data.getAListing.listingLocation}
-          </h1>
-          <h1 className="font-display font-bold text-xl text-center s:text-left mb-5 text-black ">
+          </HeadingTwo>
+          <HeadingThree className="font-display font-bold text-xl text-center s:text-left mb-5 text-black ">
             $ {data.getAListing.price}
-          </h1>
-          <p className="font-display text-left text-black ">
+          </HeadingThree>
+          <BodyOne className="font-display text-left text-black ">
             {data.getAListing.listingDescription}
-          </p>
+          </BodyOne>
 
-          <h3 className="font-display text-2xl font-bold text-black mt-10">
+          <HeadingThree className="font-display text-2xl font-bold text-black mt-10">
             Trip ammenities
-          </h3>
+          </HeadingThree>
 
           <div className="flex flex-col p-3" key="types">
             {data.getAListing.listingType.map((t) => (
               <div key={t} className="flex flex-row">
                 <img src={activy} alt="activity" />
-                <p className="font-display ml-2 mt-2">{t.name}</p>
+                <BodyOne className="font-display ml-2 mt-2">{t.name}</BodyOne>
               </div>
             ))}
           </div>
 
-          <h3 className="font-display text-2xl font-bold text-black  mt-10">
+          <HeadingThree className="font-display text-2xl font-bold text-black  mt-10">
             Activites
-          </h3>
+          </HeadingThree>
           <div className="flex flex-col p-3" key="activies">
             {data.getAListing.listingActivities.map((a) => (
               <div key={a} className="flex flex-row">
                 <img src={amenities} alt="amend" />
-                <p className="font-display ml-2 mt-2">{a.name}</p>
+                <BodyOne className="font-display ml-2 mt-2">{a.name}</BodyOne>
               </div>
             ))}
           </div>
@@ -71,9 +76,9 @@ const ViewListing = (props) => {
             />
           </div>
           <div>
-            <h3 className="font-display text-xl   text-black mt-10 mb-10">
+            <HeadingThree className="font-display text-xl   text-black mt-10 mb-10">
               Your guide
-            </h3>
+            </HeadingThree>
             <img
               src={data.getAListing.guide.Avatar}
               alt="guide"
@@ -81,12 +86,12 @@ const ViewListing = (props) => {
             />
           </div>
           <div>
-            <h3 className="font-display text-xl   text-black mt-10">
+            <HeadingThree className="font-display text-xl   text-black mt-10">
               {data.getAListing.guide.Name}
-            </h3>
-            <p className="font-display   text-black mt-5 ">
+            </HeadingThree>
+            <BodyOne className="font-display   text-black mt-5 ">
               {data.getAListing.guide.Bio}
-            </p>
+            </BodyOne>
           </div>
         </div>
       </div>
