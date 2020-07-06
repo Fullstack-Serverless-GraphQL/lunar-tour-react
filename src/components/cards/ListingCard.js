@@ -19,7 +19,7 @@ const ListingCard = ({
           <p class="font-display text-sm text-grey">{listingLocation}</p>
         </div>
 
-        <p class="font-display text-lg mt-8">${price}</p>
+        <p class="font-display text-lg mt-8 text-green-dark">${price}</p>
         <Rate disabled defaultValue={rating} />
       </div>
     </div>
