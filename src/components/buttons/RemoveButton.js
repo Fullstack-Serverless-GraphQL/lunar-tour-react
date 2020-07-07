@@ -22,7 +22,7 @@ const RemoveButton = ({
     >
       <div className="flex flex-row">
         <img src={remove} alt="remove" />
-        <p className="text-sm font-display text-bold ml-3 ">Remove</p>
+        <p className="text-sm font-display text-bold ml-3 mt-3">Remove</p>
       </div>
     </button>
   );
