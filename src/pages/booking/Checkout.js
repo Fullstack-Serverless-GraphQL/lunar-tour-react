@@ -11,12 +11,29 @@ import BodyOne from "../../components/typography/BodyOne";
 import RedBlockButton from "../../components/buttons/RedBlockButton";
 import RedOutlineButton from "../../components/buttons/RedOutlineButton";
 
-const StripeElements = () => {
+const StripeElements = (props) => {
   const stripe = useStripe();
   const elements = useElements();
+
+  const pay = async () => {
+    const result = await stripe.createPaymentMethod({
+      type: "card",
+      card: elements.getElement(CardElement),
+    });
+
+    console.log(result);
+  };
   return (
     <>
       <CardElement />
+      <div class="flex flex-row mt-20">
+        <RedBlockButton
+          text="Pay"
+          className="mr-5 s:mb-5  lg:mb-0"
+          onClick={() => pay()}
+        />
+        <RedOutlineButton text="Back" onClick={() => props.setActiveTab("2")} />
+      </div>
     </>
   );
 };
@@ -31,18 +48,7 @@ const Checkout = (props) => {
           Test using this credit card: 4242 4242 4242 4242, and enter any 5
           digits for the zip code
         </BodyOne>
-        <StripeElements />
-        <div class="flex flex-row mt-20">
-          <RedBlockButton
-            text="Proceed"
-            className="mr-5 s:mb-5  lg:mb-0"
-            onClick={() => props.setActiveTab("4")}
-          />
-          <RedOutlineButton
-            text="Back"
-            onClick={() => props.setActiveTab("2")}
-          />
-        </div>
+        <StripeElements setActiveTab={props.setActiveTab} />
       </div>
     </Elements>
   );
