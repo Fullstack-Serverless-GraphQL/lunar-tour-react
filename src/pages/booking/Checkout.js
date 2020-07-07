@@ -20,7 +20,7 @@ const StripeElements = (props) => {
       type: "card",
       card: elements.getElement(CardElement),
     });
-
+    props.setActiveTab("4");
     console.log(result);
   };
   return (
