@@ -15,24 +15,24 @@ const BookingIndex = (props) => {
   return (
     <>
       <Tabs activeKey={activeTab}>
-        <Tabs.TabPane key="1">
+        <Tabs.TabPane key="1" className="flex justify-center">
           <CustomerDetails
             setActiveTab={setActiveTab}
             fields={fields}
             setFields={setFields}
           />
         </Tabs.TabPane>
-        <Tabs.TabPane key="2">
+        <Tabs.TabPane key="2" className="flex justify-center">
           <Customers
             setActiveTab={setActiveTab}
             setFields={setFields}
             fields={fields}
           />
         </Tabs.TabPane>
-        <Tabs.TabPane key="3">
+        <Tabs.TabPane key="3" className="flex justify-center">
           <Checkout setActiveTab={setActiveTab} />
         </Tabs.TabPane>
-        <Tabs.TabPane key="4">
+        <Tabs.TabPane key="4" className="flex justify-center">
           <ConfirmationTab setActiveTab={setActiveTab} />
         </Tabs.TabPane>
       </Tabs>
