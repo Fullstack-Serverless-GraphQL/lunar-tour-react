@@ -5,6 +5,8 @@ import { GET_A_LISTING } from "../graphql/Queries";
 import activy from "../assets/trip_type.svg";
 import amenities from "../assets/trip_activity.svg";
 import LandingHeader from "../components/navs/LandingHeader";
+import { Skeleton } from "antd";
+
 import {
   HeadingOne,
   HeadingTwo,
@@ -20,7 +22,7 @@ const ViewListing = (props) => {
     },
   });
 
-  if (loading) return <p className="text-red">loading</p>;
+  if (loading) return <Skeleton />;
   if (error) return <p className="text-red">{error}</p>;
 
   console.log(data);
