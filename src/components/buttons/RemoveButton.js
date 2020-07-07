@@ -15,7 +15,7 @@ const RemoveButton = ({
   return (
     <button
       /* eslint-disable no-template-curly-in-string*/
-      className={`${className} cursor-pointer bg-white border border-red-light text-red-darkest focus:outline-none font-display rounded-px px-16 py-2 hover:bg-transparent hover:border hover:border-red-darkest`}
+      className={`${className} bg-white cursor-pointer text-red-darkest focus:outline-none font-display  px-16 py-2 cursor:pointer`}
       onClick={onClick}
       disabled={disabled}
       {...props}
