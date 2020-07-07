@@ -15,6 +15,10 @@ const client = new ApolloClient({
   cache,
   uri: "http://localhost:4000/graphql",
   resolvers,
+  onError: ({ networkError, graphQLErrors }) => {
+    console.log("graphQLErrors", graphQLErrors);
+    console.log("networkError", networkError);
+  },
 });
 
 cache.writeData({

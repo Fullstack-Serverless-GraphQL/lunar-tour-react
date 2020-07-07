@@ -25,7 +25,7 @@ const ViewListing = (props) => {
   if (loading) return <Skeleton />;
   if (error) return <p className="text-red">{error}</p>;
 
-  console.log(data);
+  console.log(error);
 
   return (
     <>

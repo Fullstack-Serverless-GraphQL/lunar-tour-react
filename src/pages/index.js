@@ -4,11 +4,12 @@ import { useQuery } from "@apollo/react-hooks";
 import { GET_ALL_LISTINGS } from "../graphql/Queries";
 import ListingCard from "../components/cards/ListingCard";
 import { Link } from "@reach/router";
+import { Skeleton } from "antd";
 
 const Index = () => {
   const { loading, data, error } = useQuery(GET_ALL_LISTINGS);
 
-  if (loading) return <p className="text-red">loading</p>;
+  if (loading) return <Skeleton />;
   if (error) return <p className="text-red">{error}</p>;
 
   console.log(data);
