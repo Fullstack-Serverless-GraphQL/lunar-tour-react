@@ -19,7 +19,7 @@ const StripeElements = (props) => {
   const elements = useElements();
   const { data } = useQuery(GET_FORM_DATA);
   const [mutate, { data: mutationData }] = useMutation(MAKE_A_BOOKING);
-  console.log("stripe", data, props.id);
+  console.log("stripe", data, props);
 
   const pay = async () => {
     const result = await stripe.createPaymentMethod({
@@ -64,7 +64,7 @@ const Checkout = (props) => {
           Test using this credit card: 4242 4242 4242 4242, and enter any 5
           digits for the zip code
         </BodyOne>
-        <StripeElements setActiveTab={props.setActiveTab} />
+        <StripeElements setActiveTab={props.setActiveTab} id={props.id} />
       </div>
     </Elements>
   );

@@ -50,7 +50,13 @@ export const GET_FORM_DATA = gql`
     formData @client {
       date
       email
-      customer
+      customer {
+        name
+        surname
+        country
+        passportNumber
+        physioScore
+      }
     }
   }
 `;
