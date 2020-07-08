@@ -18,7 +18,8 @@ const StripeElements = (props) => {
   const stripe = useStripe();
   const elements = useElements();
   const { data } = useQuery(GET_FORM_DATA);
-  const [mutate] = useMutation(MAKE_A_BOOKING);
+  const [mutate, { data: mutationData }] = useMutation(MAKE_A_BOOKING);
+  console.log("stripe", data, props.id);
 
   const pay = async () => {
     const result = await stripe.createPaymentMethod({
@@ -31,12 +32,12 @@ const StripeElements = (props) => {
         customerEmail: data.formData.email,
         bookingDate: data.formData.date,
         customers: data.formData.customers,
-        listingId: props,
+        listingId: props.id,
       },
     });
 
     props.setActiveTab("4");
-    console.log(result);
+    console.log(result, mutationData);
   };
   return (
     <>

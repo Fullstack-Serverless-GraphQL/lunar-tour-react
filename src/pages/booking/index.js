@@ -10,7 +10,7 @@ const BookingIndex = (props) => {
   const [activeTab, setActiveTab] = useState("1");
   const [fields, setFields] = useState({});
   // const { data, loading, error } = useQuery(GET_FORM_DATA);
-  // console.log("fff", data);
+  // console.log("fff", props);
 
   return (
     <>
@@ -30,7 +30,7 @@ const BookingIndex = (props) => {
           />
         </Tabs.TabPane>
         <Tabs.TabPane key="3" className="flex justify-center">
-          <Checkout setActiveTab={setActiveTab} />
+          <Checkout setActiveTab={setActiveTab} id={props.id} />
         </Tabs.TabPane>
         <Tabs.TabPane key="4" className="flex justify-center">
           <ConfirmationTab setActiveTab={setActiveTab} />
