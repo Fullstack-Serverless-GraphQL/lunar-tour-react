@@ -18,6 +18,8 @@ const ConfirmationTab = (props) => {
           <img src={ticket} alt="ticket" />
           <a
             class="text-yellow font-display"
+            target="_blank"
+            rel="noopener noreferrer"
             href={props.bookingData.chargeReciept}
           >
             Tickets
