@@ -11,7 +11,7 @@ export const resolvers = {
           formData: {
             date: args.date,
             email: args.email,
-            customer: args.customers,
+            customer: args.customer,
             __typename: formData["__typename"],
           },
         };
