@@ -37,6 +37,7 @@ const StripeElements = (props) => {
     });
 
     props.setActiveTab("4");
+    props.setBookingData(mutationData.data.makeABooking);
     console.log(result, mutationData.data.makeABooking);
   };
   return (
@@ -71,7 +72,11 @@ const Checkout = (props) => {
           digits for the zip code
         </BodyOne>
 
-        <StripeElements setActiveTab={props.setActiveTab} id={props.id} />
+        <StripeElements
+          setActiveTab={props.setActiveTab}
+          id={props.id}
+          setBookingData={props.setBookingData}
+        />
       </div>
     </Elements>
   );

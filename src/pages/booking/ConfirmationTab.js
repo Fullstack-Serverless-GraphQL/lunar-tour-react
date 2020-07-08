@@ -12,11 +12,14 @@ const ConfirmationTab = (props) => {
         <img src={vector} alt="vector" class="mt-5" />
         <BodyOne className="mt-5">
           Your link to your ticket is in the mail. Keep it safe and we will see
-          you soon on{" "}
+          you soon on {props.bookingData.bookingDate}
         </BodyOne>
         <div>
           <img src={ticket} alt="ticket" />
-          <a class="text-yellow font-display" href="bookingData.chargeReciept">
+          <a
+            class="text-yellow font-display"
+            href={props.bookingData.chargeReciept}
+          >
             Tickets
           </a>
         </div>
