@@ -6,20 +6,35 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
+import { useMutation, useQuery } from "@apollo/react-hooks";
+
 import HeadingOne from "../../components/typography/HeadingOne";
 import BodyOne from "../../components/typography/BodyOne";
 import RedBlockButton from "../../components/buttons/RedBlockButton";
 import RedOutlineButton from "../../components/buttons/RedOutlineButton";
-
+import { MAKE_A_BOOKING } from "../../graphql/Mutations";
+import { GET_FORM_DATA } from "../../graphql/Queries";
 const StripeElements = (props) => {
   const stripe = useStripe();
   const elements = useElements();
+  const { data } = useQuery(GET_FORM_DATA);
+  const [mutate] = useMutation(MAKE_A_BOOKING);
 
   const pay = async () => {
     const result = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardElement),
     });
+
+    mutate({
+      variables: {
+        customerEmail: data.formData.email,
+        bookingDate: data.formData.date,
+        customers: data.formData.customers,
+        listingId: props,
+      },
+    });
+
     props.setActiveTab("4");
     console.log(result);
   };
