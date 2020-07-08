@@ -18,7 +18,7 @@ const StripeElements = (props) => {
   const stripe = useStripe();
   const elements = useElements();
   const { data } = useQuery(GET_FORM_DATA);
-  const [mutate, { data: mutationData }] = useMutation(MAKE_A_BOOKING);
+  const [mutate, { data: mutationData, loading }] = useMutation(MAKE_A_BOOKING);
   console.log("stripe", data, props);
 
   const pay = async () => {
@@ -27,7 +27,7 @@ const StripeElements = (props) => {
       card: elements.getElement(CardElement),
     });
 
-    mutate({
+    const mutationData = await mutate({
       variables: {
         customerEmail: data.formData.email,
         bookingDate: data.formData.date,
@@ -48,7 +48,11 @@ const StripeElements = (props) => {
           className="mr-5 s:mb-5  lg:mb-0"
           onClick={() => pay()}
         />
-        <RedOutlineButton text="Back" onClick={() => props.setActiveTab("2")} />
+        <RedOutlineButton
+          text="Back"
+          onClick={() => props.setActiveTab("2")}
+          isLoading={loading}
+        />
       </div>
     </>
   );

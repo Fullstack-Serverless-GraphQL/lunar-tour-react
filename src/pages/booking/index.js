@@ -33,7 +33,10 @@ const BookingIndex = (props) => {
           <Checkout setActiveTab={setActiveTab} id={props.id} />
         </Tabs.TabPane>
         <Tabs.TabPane key="4" className="flex justify-center">
-          <ConfirmationTab setActiveTab={setActiveTab} />
+          <ConfirmationTab
+            setActiveTab={setActiveTab}
+            navigate={props.navigate}
+          />
         </Tabs.TabPane>
       </Tabs>
     </>
