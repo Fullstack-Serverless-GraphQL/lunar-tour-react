@@ -31,7 +31,7 @@ const StripeElements = (props) => {
       variables: {
         customerEmail: data.formData.email,
         bookingDate: data.formData.date,
-        customers: data.formData.customers,
+        customers: data.formData.customer,
         listingId: props.id,
       },
     });
