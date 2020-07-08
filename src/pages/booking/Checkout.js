@@ -37,22 +37,24 @@ const StripeElements = (props) => {
     });
 
     props.setActiveTab("4");
-    console.log(result, mutationData);
+    console.log(result, mutationData.data.makeABooking);
   };
   return (
     <>
       <CardElement />
+      {loading && (
+        <>
+          <p className="text-red">Busy booking your trip</p>
+        </>
+      )}
       <div class="flex flex-row mt-20">
         <RedBlockButton
           text="Pay"
           className="mr-5 s:mb-5  lg:mb-0"
+          isLoading={loading}
           onClick={() => pay()}
         />
-        <RedOutlineButton
-          text="Back"
-          onClick={() => props.setActiveTab("2")}
-          isLoading={loading}
-        />
+        <RedOutlineButton text="Back" onClick={() => props.setActiveTab("2")} />
       </div>
     </>
   );
@@ -68,6 +70,7 @@ const Checkout = (props) => {
           Test using this credit card: 4242 4242 4242 4242, and enter any 5
           digits for the zip code
         </BodyOne>
+
         <StripeElements setActiveTab={props.setActiveTab} id={props.id} />
       </div>
     </Elements>
