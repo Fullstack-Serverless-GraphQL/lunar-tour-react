@@ -34,11 +34,7 @@ const BlueBlockButton = ({
       disabled={disabled}
       {...props}
     >
-      {isLoading === true ? (
-        <ImageStyles src={loading} alt="loading..." />
-      ) : (
-        children
-      )}
+      {isLoading ? <ImageStyles src={loading} alt="loading..." /> : children}
     </button>
   );
 };
