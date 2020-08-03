@@ -18,7 +18,9 @@ const StripeElements = (props) => {
   const stripe = useStripe();
   const elements = useElements();
   const { data } = useQuery(GET_FORM_DATA);
-  const [mutate, { data: mutationData, loading }] = useMutation(MAKE_A_BOOKING);
+  const [mutate, { data: mutationData, loading, error }] = useMutation(
+    MAKE_A_BOOKING
+  );
   console.log("stripe", data, props);
 
   const pay = async () => {
@@ -43,6 +45,7 @@ const StripeElements = (props) => {
   return (
     <>
       <CardElement />
+      {error && <p className="text-red-dark">{error.message}</p>}
       {loading && (
         <>
           <p className="text-red">Busy booking your trip</p>
