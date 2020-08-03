@@ -14,7 +14,7 @@ const ConfirmationTab = (props) => {
           Your link to your ticket is in the mail. Keep it safe and we will see
           you soon on {props.bookingData.bookingDate}
         </BodyOne>
-        <div>
+        <div className="flex justify-center">
           <img src={ticket} alt="ticket" />
           <a
             class="text-yellow font-display"
