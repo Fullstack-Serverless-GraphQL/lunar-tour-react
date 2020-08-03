@@ -29,18 +29,21 @@ const StripeElements = (props) => {
       card: elements.getElement(CardElement),
     });
 
-    const mutationData = await mutate({
-      variables: {
-        customerEmail: data.formData.email,
-        bookingDate: data.formData.date,
-        customers: data.formData.customer,
-        listingId: props.id,
-      },
-    });
-
-    props.setActiveTab("4");
-    props.setBookingData(mutationData.data.makeABooking);
-    console.log(result, mutationData.data.makeABooking);
+    try {
+      const mutationData = await mutate({
+        variables: {
+          customerEmail: data.formData.email,
+          bookingDate: data.formData.date,
+          customers: data.formData.customer,
+          listingId: props.id,
+        },
+      });
+      props.setActiveTab("4");
+      props.setBookingData(mutationData.data.makeABooking);
+      console.log(result, mutationData.data.makeABooking);
+    } catch (e) {
+      return <p className="text-red">{e.message} </p>;
+    }
   };
   return (
     <>

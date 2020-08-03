@@ -16,7 +16,9 @@ const client = new ApolloClient({
   uri: process.env.REACT_APP_API_ENDPOINT || "http://localhost:4000/graphql",
   resolvers,
   onError: ({ networkError, graphQLErrors }) => {
-    console.log("graphQLErrors", graphQLErrors[0]);
+    if (graphQLErrors) {
+      console.log("graphQLErrors", graphQLErrors[0]);
+    }
     console.log("networkError", networkError);
   },
 });
@@ -63,11 +65,11 @@ class ErrorBoundary extends React.Component {
 }
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <ErrorBoundary>
+    <ErrorBoundary>
+      <ApolloProvider client={client}>
         <App />
-      </ErrorBoundary>
-    </ApolloProvider>
+      </ApolloProvider>
+    </ErrorBoundary>
   </React.StrictMode>,
   document.getElementById("root")
 );
