@@ -149,10 +149,9 @@ const Customers = (props) => {
           >
             Proceed
           </RedBlockButton>
-          <RedOutlineButton
-            text="Back"
-            onClick={() => props.setActiveTab("1")}
-          />
+          <RedOutlineButton onClick={() => props.setActiveTab("1")}>
+            Back
+          </RedOutlineButton>
         </div>
       </div>
     </div>

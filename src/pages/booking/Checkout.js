@@ -56,7 +56,10 @@ const StripeElements = (props) => {
         >
           Pay
         </RedBlockButton>
-        <RedOutlineButton text="Back" onClick={() => props.setActiveTab("2")} />
+        <RedOutlineButton onClick={() => props.setActiveTab("2")}>
+          {" "}
+          Back
+        </RedOutlineButton>
       </div>
     </>
   );

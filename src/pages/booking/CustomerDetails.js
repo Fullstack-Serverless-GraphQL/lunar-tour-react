@@ -50,7 +50,7 @@ const CustomerDetails = (props) => {
               Proceed
             </RedBlockButton>
 
-            <RedOutlineButton text="Cancel" />
+            <RedOutlineButton>Cancel</RedOutlineButton>
           </div>
         </div>
       </Form>
