@@ -27,12 +27,13 @@ const StripeElements = (props) => {
     <>
       <CardElement />
       <div class="flex flex-row mt-20">
-        <RedBlockButton
-          text="Pay"
-          className="mr-5 s:mb-5  lg:mb-0"
-          onClick={() => pay()}
-        />
-        <RedOutlineButton text="Back" onClick={() => props.setActiveTab("2")} />
+        <RedBlockButton className="mr-5 s:mb-5  lg:mb-0" onClick={() => pay()}>
+          Pay
+        </RedBlockButton>
+        <RedOutlineButton onClick={() => props.setActiveTab("2")}>
+          {" "}
+          Back
+        </RedOutlineButton>
       </div>
     </>
   );

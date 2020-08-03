@@ -19,7 +19,7 @@ const ImageStyles = styled.img`
 const RedBlockButton = ({
   className = "",
   onClick,
-  text,
+  children,
   disabled = false,
   isLoading,
   large,
@@ -35,18 +35,14 @@ const RedBlockButton = ({
       disabled={disabled}
       {...props}
     >
-      {isLoading === true ? (
-        <ImageStyles src={loading} alt="loading..." />
-      ) : (
-        text
-      )}
+      {isLoading ? <ImageStyles src={loading} alt="loading..." /> : children}
     </button>
   );
 };
 const propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
-  text: PropTypes.string,
+  children: PropTypes.string,
   disabled: PropTypes.bool,
   large: PropTypes.bool,
   long: PropTypes.bool,
