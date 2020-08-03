@@ -19,7 +19,7 @@ const ImageStyles = styled.img`
 const RedOutlineButton = ({
   className = "",
   onClick,
-  text,
+  children,
   disabled = false,
   isLoading,
   large,
@@ -37,7 +37,7 @@ const RedOutlineButton = ({
       {isLoading === true ? (
         <ImageStyles src={loading} alt="loading..." />
       ) : (
-        text
+        children
       )}
     </button>
   );
@@ -45,7 +45,7 @@ const RedOutlineButton = ({
 const propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
-  text: PropTypes.string,
+  children: PropTypes.string,
   disabled: PropTypes.bool,
   large: PropTypes.bool,
   long: PropTypes.bool,
