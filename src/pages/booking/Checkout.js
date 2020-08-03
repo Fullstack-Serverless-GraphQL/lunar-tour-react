@@ -38,7 +38,7 @@ const StripeElements = (props) => {
     </>
   );
 };
-const stripePromise = loadStripe("pk_test_6pRNASCoBOKtIshFeQd4XMUh");
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 
 const Checkout = (props) => {
   return (
