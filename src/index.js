@@ -16,7 +16,7 @@ const client = new ApolloClient({
   uri: process.env.REACT_APP_API_ENDPOINT || "http://localhost:4000/graphql",
   resolvers,
   onError: ({ networkError, graphQLErrors }) => {
-    console.log("graphQLErrors", graphQLErrors);
+    console.log("graphQLErrors", graphQLErrors[0]);
     console.log("networkError", networkError);
   },
 });
@@ -31,10 +31,42 @@ cache.writeData({
     },
   },
 });
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  componentDidMount() {
+    if (this.props.sentError && this.props.sentError.length > 1) {
+      this.setState({ hasError: true });
+    }
+  }
+  static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // You can render any custom fallback UI
+      return <h1>Something went wrong.</h1>;
+    }
+
+    return this.props.children;
+  }
+}
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById("root")
