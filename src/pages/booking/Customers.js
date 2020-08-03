@@ -138,10 +138,9 @@ const Customers = (props) => {
       {inputs}
       <div className="flex flex-col">
         <div className="mt-5 ">
-          <BlueBlockButton
-            text="Add a customer"
-            onClick={() => addCustomer()}
-          />
+          <BlueBlockButton onClick={() => addCustomer()}>
+            Add a customer
+          </BlueBlockButton>
         </div>
         <div className="flex lg:flex-row mt-5 s:flex-col">
           <RedBlockButton
