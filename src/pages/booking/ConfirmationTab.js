@@ -26,11 +26,9 @@ const ConfirmationTab = (props) => {
           </a>
         </div>
         <div class="flex flex-row ml-32 mt-20">
-          <RedBlockButton
-            text="Book more"
-            onClick={() => props.navigate(`/`)}
-            className="mr-5"
-          />
+          <RedBlockButton onClick={() => props.navigate(`/`)} className="mr-5">
+            Book more
+          </RedBlockButton>
         </div>
       </div>
     </>

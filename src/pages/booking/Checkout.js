@@ -50,11 +50,12 @@ const StripeElements = (props) => {
       )}
       <div class="flex flex-row mt-20">
         <RedBlockButton
-          text="Pay"
           className="mr-5 s:mb-5  lg:mb-0"
           isLoading={loading}
           onClick={() => pay()}
-        />
+        >
+          Pay
+        </RedBlockButton>
         <RedOutlineButton text="Back" onClick={() => props.setActiveTab("2")} />
       </div>
     </>

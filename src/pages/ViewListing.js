@@ -74,9 +74,10 @@ const ViewListing = (props) => {
           <div>
             <RedBlockButton
               onClick={() => props.navigate(`/booking/${props.id}`)}
-              text="Book"
               className=" text-center s:pr-20 mb-10 mt-10"
-            />
+            >
+              Book
+            </RedBlockButton>
           </div>
           <div>
             <HeadingThree className="font-display text-xl   text-black mt-10 mb-10">
