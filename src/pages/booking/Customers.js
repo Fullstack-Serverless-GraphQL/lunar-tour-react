@@ -53,7 +53,7 @@ const Customers = (props) => {
         <div className="flex lg:flex-row s:flex-col mt-10" key={index}>
           <hr />
           <div className="flex flex-col mr-5">
-            <BodyOne> customer name </BodyOne>
+            <BodyOne>Customer name </BodyOne>
 
             <Input
               placeholder="Bog Iger"
@@ -67,7 +67,7 @@ const Customers = (props) => {
               }
             />
 
-            <BodyOne> customer country </BodyOne>
+            <BodyOne> Customer country </BodyOne>
 
             <Input
               placeholder="Iran"
@@ -115,7 +115,7 @@ const Customers = (props) => {
             <BodyOne> Passport number </BodyOne>
 
             <Input
-              placeholder="4"
+              placeholder="GFC3453453"
               type="text"
               onChange={(e) =>
                 updateCustomer({
