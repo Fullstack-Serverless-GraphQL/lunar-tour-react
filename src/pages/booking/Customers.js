@@ -30,7 +30,6 @@ const Customers = (props) => {
   const updateCustomer = ({ index, field, value }) => {
     const o = [...customers];
     o[index][field] = value;
-    console.log("oo", o);
     mutate({
       variables: {
         email: data.formData.email,

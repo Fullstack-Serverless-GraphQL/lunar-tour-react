@@ -19,7 +19,6 @@ const StripeElements = (props) => {
   const elements = useElements();
   const { data } = useQuery(GET_FORM_DATA);
   const [mutate, { loading, error }] = useMutation(MAKE_A_BOOKING);
-  console.log("stripe", data, props);
 
   const pay = async () => {
     const result = await stripe.createPaymentMethod({

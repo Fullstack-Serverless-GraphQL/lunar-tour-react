@@ -1,16 +1,29 @@
 import React, { useState } from "react";
+import { useQuery } from "@apollo/react-hooks";
+import { GET_A_LISTING } from "../graphql/Queries";
 import Tabs from "../../components/navs/Tabs";
 import CustomerDetails from "./CustomerDetails";
 import Customers from "./Customers";
 import Checkout from "./Checkout";
 import ConfirmationTab from "./ConfirmationTab";
+import { Skeleton } from "antd";
+
 const BookingIndex = (props) => {
   const [activeTab, setActiveTab] = useState("1");
   const [fields, setFields] = useState({});
   const [bookingData, setBookingData] = useState({});
   // const { data, loading, error } = useQuery(GET_FORM_DATA);
   // console.log("fff", props);
+  const { loading, data: listing, error } = useQuery(GET_A_LISTING, {
+    variables: {
+      listingId: props.id,
+    },
+  });
 
+  if (loading) return <Skeleton />;
+  if (error) return <p className="text-red">{error}</p>;
+
+  const bookingName = listing.getAListing.listingName;
   return (
     <>
       <Tabs activeKey={activeTab}>

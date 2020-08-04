@@ -8,17 +8,13 @@ import RedOutlineButton from "../../components/buttons/RedOutlineButton";
 import Input from "../../components/inputs/Input";
 import { Form } from "antd";
 const CustomerDetails = (props) => {
-  console.log(props);
-
   const [mutate] = useMutation(UPDATE_FORM_DATA);
 
   return (
     <>
       <Form
         // fields={props.fields}
-        onValuesChange={(changedValues, allValues) => {
-          console.log("rrr", allValues.date);
-
+        onValuesChange={(allValues) => {
           mutate({
             variables: {
               email: allValues.email,
