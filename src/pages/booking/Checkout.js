@@ -70,7 +70,7 @@ const StripeElements = (props) => {
     </>
   );
 };
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
+const stripePromise = loadStripe(`${process.env.REACT_APP_STRIPE_KEY}`);
 
 const Checkout = (props) => {
   return (
