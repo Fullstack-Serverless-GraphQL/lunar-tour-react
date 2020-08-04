@@ -1,6 +1,7 @@
 import React from "react";
 import { Rate } from "antd";
 import BodyOne from "../typography/BodyOne";
+import PropTypes from "prop-types";
 import "antd/dist/antd.css";
 
 const ListingCard = ({
@@ -25,4 +26,12 @@ const ListingCard = ({
     </div>
   </>
 );
+
+ListingCard.propTypes = {
+  listingTitle: PropTypes.string,
+  listingLocation: PropTypes.string,
+  price: PropTypes.string,
+  rating: PropTypes.number,
+  coverPhoto: PropTypes.string,
+};
 export default ListingCard;
