@@ -23,22 +23,23 @@ const ViewListing = (props) => {
   if (loading) return <Skeleton />;
   if (error) return <p className="text-red">{error}</p>;
 
+  const listing = data.getAListing;
   return (
     <>
-      <LandingHeader imgURL={data.getAListing.coverPhoto} />
+      <LandingHeader imgURL={listing.coverPhoto} />
       <div className="grid grid-cols-13 p-5 mt-10">
         <div className="mr-16">
           <HeadingOne className="font-display  font-semibold text-3xl text-black">
-            {data.getAListing.listingName}
+            {listing.listingName}
           </HeadingOne>
           <HeadingTwo className="font-display text-xl text-black mt-4 mb-8">
-            {data.getAListing.listingLocation}
+            {listing.listingLocation}
           </HeadingTwo>
           <HeadingThree className="font-display font-bold text-xl text-center s:text-left mb-5 text-black ">
-            $ {data.getAListing.price}
+            $ {listing.price}
           </HeadingThree>
           <BodyOne className="font-display text-left text-black ">
-            {data.getAListing.listingDescription}
+            {listing.listingDescription}
           </BodyOne>
 
           <HeadingThree className="font-display text-2xl font-bold text-black mt-10">
@@ -46,7 +47,7 @@ const ViewListing = (props) => {
           </HeadingThree>
 
           <div className="flex flex-col p-3" key="types">
-            {data.getAListing.listingType.map((t, index) => (
+            {listing.listingType.map((t, index) => (
               <div key={index} className="flex flex-row">
                 <img src={activy} alt="activity" />
                 <BodyOne className="font-display ml-2 mt-2">{t.name}</BodyOne>
@@ -58,7 +59,7 @@ const ViewListing = (props) => {
             Activites
           </HeadingThree>
           <div className="flex flex-col p-3" key="activies">
-            {data.getAListing.listingActivities.map((a, index) => (
+            {listing.listingActivities.map((a, index) => (
               <div key={index} className="flex flex-row">
                 <img src={amenities} alt="amend" />
                 <BodyOne className="font-display ml-2 mt-2">{a.name}</BodyOne>
@@ -80,17 +81,17 @@ const ViewListing = (props) => {
               Your guide
             </HeadingThree>
             <img
-              src={data.getAListing.guide.Avatar}
+              src={listing.guide.Avatar}
               alt="guide"
               className="rounded-lg h-48"
             />
           </div>
           <div>
             <HeadingThree className="font-display text-xl   text-black mt-10">
-              {data.getAListing.guide.Name}
+              {listing.guide.Name}
             </HeadingThree>
             <BodyOne className="font-display   text-black mt-5 ">
-              {data.getAListing.guide.Bio}
+              {listing.guide.Bio}
             </BodyOne>
           </div>
         </div>
