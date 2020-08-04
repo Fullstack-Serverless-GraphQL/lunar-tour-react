@@ -3,7 +3,6 @@ import { GET_FORM_DATA } from "./graphql/Queries";
 export const resolvers = {
   Mutation: {
     updateFormData: (parent, args, context, info) => {
-      console.log("rrr", args);
       const queryResult = context.cache.readQuery({ query: GET_FORM_DATA });
       const { formData } = queryResult;
       if (queryResult) {
