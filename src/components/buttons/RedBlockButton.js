@@ -26,7 +26,6 @@ const RedBlockButton = ({
   long,
   ...props
 }) => {
-  console.log(onClick);
   return (
     <button
       /* eslint-disable no-template-curly-in-string*/
