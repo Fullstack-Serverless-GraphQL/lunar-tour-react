@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Tabs from "../../components/navs/Tabs";
-import { useQuery } from "@apollo/react-hooks";
-import { GET_FORM_DATA } from "../../graphql/Queries";
 import CustomerDetails from "./CustomerDetails";
 import Customers from "./Customers";
 import Checkout from "./Checkout";

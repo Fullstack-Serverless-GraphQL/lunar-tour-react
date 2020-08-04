@@ -18,9 +18,7 @@ const StripeElements = (props) => {
   const stripe = useStripe();
   const elements = useElements();
   const { data } = useQuery(GET_FORM_DATA);
-  const [mutate, { data: mutationData, loading, error }] = useMutation(
-    MAKE_A_BOOKING
-  );
+  const [mutate, { loading, error }] = useMutation(MAKE_A_BOOKING);
   console.log("stripe", data, props);
 
   const pay = async () => {
