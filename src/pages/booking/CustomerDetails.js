@@ -1,7 +1,6 @@
 import React from "react";
 import { useMutation } from "@apollo/react-hooks";
 import { UPDATE_FORM_DATA } from "../../graphql/Mutations";
-import HeadingOne from "../../components/typography/HeadingOne";
 import BodyOne from "../../components/typography/BodyOne";
 import RedBlockButton from "../../components/buttons/RedBlockButton";
 import RedOutlineButton from "../../components/buttons/RedOutlineButton";
@@ -24,7 +23,6 @@ const CustomerDetails = (props) => {
         }}
       >
         <div className="flex flex-col p-20 ">
-          <HeadingOne>Booking for Listing Name</HeadingOne>
           <div className="mt-5">
             <BodyOne>Booking date</BodyOne>
             <Form.Item name="date">

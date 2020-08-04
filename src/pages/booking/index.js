@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
-import { GET_A_LISTING } from "../graphql/Queries";
+import { GET_A_LISTING } from "../../graphql/Queries";
 import Tabs from "../../components/navs/Tabs";
 import CustomerDetails from "./CustomerDetails";
 import Customers from "./Customers";
 import Checkout from "./Checkout";
 import ConfirmationTab from "./ConfirmationTab";
 import { Skeleton } from "antd";
+import { HeadingOne } from "../../components/typography";
 
 const BookingIndex = (props) => {
   const [activeTab, setActiveTab] = useState("1");
@@ -26,6 +27,7 @@ const BookingIndex = (props) => {
   const bookingName = listing.getAListing.listingName;
   return (
     <>
+      <HeadingOne className="text-center">Booking for {bookingName}</HeadingOne>
       <Tabs activeKey={activeTab}>
         <Tabs.TabPane key="1" className="flex justify-center">
           <CustomerDetails
