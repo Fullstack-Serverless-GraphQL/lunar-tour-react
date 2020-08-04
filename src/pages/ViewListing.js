@@ -14,8 +14,6 @@ import {
   BodyOne,
 } from "../components/typography";
 const ViewListing = (props) => {
-  console.log(props);
-
   const { loading, data, error } = useQuery(GET_A_LISTING, {
     variables: {
       listingId: props.id,
@@ -50,8 +48,8 @@ const ViewListing = (props) => {
           </HeadingThree>
 
           <div className="flex flex-col p-3" key="types">
-            {data.getAListing.listingType.map((t) => (
-              <div key={t} className="flex flex-row">
+            {data.getAListing.listingType.map((t, index) => (
+              <div key={index} className="flex flex-row">
                 <img src={activy} alt="activity" />
                 <BodyOne className="font-display ml-2 mt-2">{t.name}</BodyOne>
               </div>
@@ -62,8 +60,8 @@ const ViewListing = (props) => {
             Activites
           </HeadingThree>
           <div className="flex flex-col p-3" key="activies">
-            {data.getAListing.listingActivities.map((a) => (
-              <div key={a} className="flex flex-row">
+            {data.getAListing.listingActivities.map((a, index) => (
+              <div key={index} className="flex flex-row">
                 <img src={amenities} alt="amend" />
                 <BodyOne className="font-display ml-2 mt-2">{a.name}</BodyOne>
               </div>

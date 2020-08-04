@@ -8,7 +8,6 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import { resolvers } from "./resolvers";
 import { InMemoryCache } from "apollo-cache-inmemory";
 
-console.log(process.env.REACT_APP_API_ENDPOINT);
 //add the uri here
 const cache = new InMemoryCache();
 
