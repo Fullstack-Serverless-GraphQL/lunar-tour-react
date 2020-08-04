@@ -56,7 +56,7 @@ const Customers = (props) => {
             <BodyOne>Customer name </BodyOne>
 
             <Input
-              placeholder="Bog Iger"
+              placeholder="Bob"
               type="name"
               onChange={(e) =>
                 updateCustomer({
@@ -99,7 +99,7 @@ const Customers = (props) => {
             <BodyOne> Customer surname </BodyOne>
 
             <Input
-              placeholder="iGER"
+              placeholder="Iger"
               type="text"
               onChange={(e) =>
                 updateCustomer({
