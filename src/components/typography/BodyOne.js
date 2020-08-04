@@ -10,7 +10,7 @@ const BodyOne = ({ className, children }) => {
 
 BodyOne.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 };
 
 BodyOne.defaultProps = {

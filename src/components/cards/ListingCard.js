@@ -12,7 +12,7 @@ const ListingCard = ({
 }) => (
   <>
     <div className="rounded-px w-card h-auto shadow-lg-card cursor-pointer">
-      <img src={coverPhoto} class="w-full h-48 rounded-t-px" alt="cover" />
+      <img src={coverPhoto} className="w-full h-48 rounded-t-px" alt="cover" />
       <div className="flex flex-col p-2">
         <div className="flex flex-col mt-2 ">
           <BodyOne className="text-lg">{listingTitle}</BodyOne>

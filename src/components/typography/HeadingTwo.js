@@ -10,7 +10,7 @@ const HeadingTwo = ({ className, children }) => {
 
 HeadingTwo.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 };
 
 HeadingTwo.defaultProps = {
