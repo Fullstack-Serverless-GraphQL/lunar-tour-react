@@ -1,5 +1,5 @@
 import React from "react";
-
+import { HeadingOne } from "../typography";
 const LandingHeader = ({ imgURL, text = "" }) => {
   return (
     <>
@@ -12,9 +12,7 @@ const LandingHeader = ({ imgURL, text = "" }) => {
           marginTop: "-85px",
         }}
       >
-        <h1 className="text-white font-display text-5xl pt-44 s:text-4xl">
-          {text}
-        </h1>
+        <HeadingOne className="text-5xl pt-44 s:text-4xl">{text}</HeadingOne>
       </div>
     </>
   );
