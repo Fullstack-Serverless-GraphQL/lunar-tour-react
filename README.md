@@ -4,13 +4,13 @@ Lunar Tour is an app that built in React that allows users to book lunar vacatio
 
 The app is composed of the following:
 
-🍯 [Apollo Client](https://apollo.vuejs.org/)
+🍯 [Apollo Client](https://www.apollographql.com/apollo-client)
 
-🍯 [Ant Design](https://www.antdv.com/)
+🍯 [Ant Design](https://ant.design/)
 
 🍯 [Tailwind CSS](https://tailwindcss.com/)
 
-🍯 [Reach Router](https://router.vuejs.org/)
+🍯 [Reach Router](https://reach.tech/router/)
 
 ## Project setup
 
