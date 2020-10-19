@@ -42,8 +42,8 @@ This project was scaffolded using the [React Bleeding Edge Kit](https://github.c
 
 ## Links to related projects
 
-⛽ [Lunar Tour API](https://github.com/Fullstack-Serverless-GraphQL/lunar-tour-api)
+🎖️ [Lunar Tour API](https://github.com/Fullstack-Serverless-GraphQL/lunar-tour-api)
 
-⛽ [Lunar Tour (Vue)](https://github.com/Fullstack-Serverless-GraphQL/lunar-tour-frontend)
+🎖️ [Lunar Tour (Vue)](https://github.com/Fullstack-Serverless-GraphQL/lunar-tour-frontend)
 
-⛽ [Fullstack Serverless GraphQL docs](https://github.com/Fullstack-Serverless-GraphQL/fullstack-serverless-graphql-docs)
+🎖️ [Fullstack Serverless GraphQL docs](https://github.com/Fullstack-Serverless-GraphQL/fullstack-serverless-graphql-docs)
