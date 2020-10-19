@@ -17,13 +17,13 @@ The app is composed of the following:
 First go head and clone the project:
 
 ```bash
-git clone https://github.com/Fullstack-Serverless-GraphQL/lunar-tour-frontend
+git clone https://github.com/Fullstack-Serverless-GraphQL/lunar-tour-react
 ```
 
 Then cd into the directory of the project:
 
 ```bash
-cd lunar-tour-frontend
+cd lunar-tour-react
 ```
 
 Once you're in then install the packages using your fav package manager:
@@ -32,26 +32,18 @@ Once you're in then install the packages using your fav package manager:
 yarn install
 ```
 
-To run the app on `localhost://8080` do the following:
+To run the app on `localhost://3000` do the following:
 
 ```bash
-yarn serve
+yarn start
 ```
 
-To run Lints and fixes files:
-
-```bash
-yarn lint
-```
-
-### Customize configuration
-
-This project was scaffolded using the Vue CLI, so if you want to customise things to your liking see the [Configuration Reference](https://cli.vuejs.org/config/).
+This project was scaffolded using the [React Bleeding Edge Kit](https://github.com/AmoDinho/react-bleeding-edge-kit).
 
 ## Links to related projects
 
 ⛽ [Lunar Tour API](https://github.com/Fullstack-Serverless-GraphQL/lunar-tour-api)
 
-⛽ [Lunar Tour (React)](https://github.com/Fullstack-Serverless-GraphQL/lunar-tour-react)
+⛽ [Lunar Tour (Vue)](https://github.com/Fullstack-Serverless-GraphQL/lunar-tour-frontend)
 
 ⛽ [Fullstack Serverless GraphQL docs](https://github.com/Fullstack-Serverless-GraphQL/fullstack-serverless-graphql-docs)
