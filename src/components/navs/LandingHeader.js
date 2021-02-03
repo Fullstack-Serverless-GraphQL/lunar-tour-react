@@ -12,7 +12,9 @@ const LandingHeader = ({ imgURL, text = "" }) => {
           marginTop: "-85px",
         }}
       >
-        <HeadingOne className="text-5xl pt-44 s:text-4xl">{text}</HeadingOne>
+        <HeadingOne className="text-5xl pt-44 s:text-4xl text-white">
+          {text}
+        </HeadingOne>
       </div>
     </>
   );
